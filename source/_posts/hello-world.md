@@ -15,4 +15,4 @@ tags:
 More info: [链接](https://www.linjiujiu.xyz/2018/12/11/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/)
 
 ###  三分钟搭建个人博客 Hexo + Next + github 
-More info: (https://blog.csdn.net/qq_36903042/article/details/82228883)
+More info: [链接](https://blog.csdn.net/qq_36903042/article/details/82228883)
