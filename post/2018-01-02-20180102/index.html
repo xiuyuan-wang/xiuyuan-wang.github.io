@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="倘若有一天" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass（scss）、less、postcss、stylus等的用法与区别">
+<meta property="og:url" content="http://yoursite.com/post/2018-01-02-20180102/index.html">
+<meta property="og:site_name" content="倘若有一天">
+<meta property="og:description" content="它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-09T01:44:46.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass（scss）、less、postcss、stylus等的用法与区别">
+<meta name="twitter:description" content="它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/post/2018-01-02-20180102/">
+
+
+
+
+
+  <title>sass（scss）、less、postcss、stylus等的用法与区别 | 倘若有一天</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">倘若有一天</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">深夜狂奔</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2018-01-02-20180102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="笑余笙">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="倘若有一天">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sass（scss）、less、postcss、stylus等的用法与区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T20:38:18+08:00">
+                2018-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> 它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。</p>
+<a id="more"></a>
+<h5 id="一-Sass-Scss、Less、stylus是什么"><a href="#一-Sass-Scss、Less、stylus是什么" class="headerlink" title="一. Sass/Scss、Less、stylus是什么?"></a>一. Sass/Scss、Less、stylus是什么?</h5><p>  它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。</p>
+<h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍:"></a>基本介绍:</h5><h6 id="sass-scss"><a href="#sass-scss" class="headerlink" title="sass/scss"></a>sass/scss</h6><p>  SASS 2007年诞生，最早也是最成熟的CSS预处理器，拥有ruby社区的支持和compass这一最强大的css框架<br>  Sass的缩排语法，对于写惯css前端的web开发者来说很不直观，sass 不兼容 css 代码<br>  Sass3 就变成了Scss(sassy css) 与原来的语法兼容，只是用{}取代了原来的缩进<br>  sass 的运行 依赖于 ruby 环境（compass 将 sass 编译为 css）<br>  现在可用 node-sass 来编译 sass/scss 文件</p>
+<pre><code>node-sass 是一套在 node.js 用 LibSass 編 sass/scss 的工具
+原始的sass 是用 ruby 编写的，所以需要 ruby 环境，libSass 是原始sass引擎的一个 c/c++ 接口，使用它编译sass不依赖于ruby，可以使用其他语言使用libSass
+node-sass
+ruby-sass与libsass的区别
+安装node-sass时，会去GitHub 下载一个 .node的文件而这个文件托管在墙外的服务器上，所以失败了 node-sass安装失败解决方案</code></pre><p>  以 .sass 或 .scss 为文件后缀名称（现在一般都是用 scss）</p>
+<h6 id="less"><a href="#less" class="headerlink" title="less"></a>less</h6><p>  less 2009年出现，受sass的影响较大，但又使用CSS的语法，让大部分开发者和设计师更容易上手，在ruby社区之外支持者远超过SASS，其缺点是比起SASS来，可编程功能不够，不过优点是简单和兼容CSS，反过来也影响了sass演变到了scss的时代，著名的Twitter Bootstrap就是采用LESS做底层语言的。<br>  less 可以使用 less.js 在浏览器运行时中解析 less 代码<br>  也可以在 node环境中 安装 less，提前编译 less 文件 npm install -g less &amp;lessc styles.less styles.css (可以加参数控制编译后的css排版及压缩)<br>  以 .less 为文件后缀名称</p>
+<h6 id="stylus"><a href="#stylus" class="headerlink" title="stylus"></a>stylus</h6><p> Stylus，2010年产生，来自Node.js社区，主要用来给Node项目进行CSS预处理支持，由 TJ 大神开发安装及编译 npm install stylus -g &amp; stylus src/ (可以加参数控制编译后的css排版及压缩)以 .styl 为文件后缀<br> 使用现状：现在一般都是配合webpack使用这几种预处理语言，需要先安装 编译器、对应 loader，然后再 module.rules 配置其具体规则</p>
+<h6 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h6><p>  less 基本语法属于 css 风格，而 sass，stylus 利用缩进，空格，换行来减少需要输入的 字符<br>  目前 scss, stylus 也可以支持 css 风格，用大括号 来书写</p>
+<p>1、变量符 @ $ 无变量符号直接变量名</p>
+<pre><code>less 
+@size: 10px;
+.box {
+    width: @size;
+}
+
+scss
+$red: #c00;
+strong {
+    color: $red;
+}
+
+stylus
+red = #c00
+strong
+    color: red
+
+css 的变量规范
+/* global scope */
+:root {
+    --red: #c00;
+}
+strong {
+    color: var(--red);
+}
+
+* 变量作用域：less 惰性加载，sass，stylus 就近加载</code></pre><p>2、嵌套语法一致，用 &amp; 引用父集 – 嵌套不建议超过 4 层</p>
+<pre><code>* less 不支持跳出嵌套
+* sass `@at-root`
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@at-root 支持参数，跳出不同的嵌套 </span><br><span class="line">without： all，表示所有</span><br><span class="line">without: rule，表示常规css，rule是默认值</span><br><span class="line">without: media，表示media</span><br><span class="line">without: support，@support现在使用还不广泛</span><br><span class="line"></span><br><span class="line">// child1 将跳出 parent 的嵌套</span><br><span class="line">.parent1&#123;</span><br><span class="line">    color:#f00;</span><br><span class="line">    @at-root .child1 &#123;</span><br><span class="line">        width:200px;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><p>3、插值</p>
+<pre><code>less
+@prefix: ui;
+.@{prefix}-button {
+color: #333;
+}
+
+sass
+$prefix: ui
+.#{$prefix}-button {
+    color: #333;
+}
+
+stylus
+prefix = ui
+.{prefix}-button
+    color #333</code></pre><p>4、混入（mixin）：预处理器最精髓的功能，样式层面上的抽象（相当于copy代码片段）<br>  less 直接引入<br>  scss 要先声明 @mixin,使用时 @include</p>
+<p>5、继承<br>6、函数<br>7、逻辑控制：sass, stylus 支持 if else for each while, less 使用 mixin when 处理<br>具体语法看官方文档</p>
+<h6 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h6><p>  sass 大而全，出现时间最久，但依赖于 ruby (compass)<br>  less 可以平滑的从 css 过度而来，可以在运行时解析，逻辑功能有些缺失<br>  stylus 起源 nodejs 社区，语法灵活， 有一个官方开发的样式库 nib，同样提供了不少好用的 mixin</p>
+<h5 id="Postcss-是什么样的一种存在？"><a href="#Postcss-是什么样的一种存在？" class="headerlink" title="Postcss 是什么样的一种存在？"></a>Postcss 是什么样的一种存在？</h5><p>PostCSS 既不是预处理器也不是后处理器，而是一个平台，其本身并不处理任何具体任务，只有当我们为其附加各种插件之后，他才具有实用性<br>PostCSS 就像是一个使能器（enabler），他可以不用完全替代现有的预处理器或后处理器，而只是作为他们的补充工具。PostCSS的工作机制主要包含解析代码、执行插件、渲染结果三部分：<br>PostCSS 会将css代码解析成包含一系列节点的抽象语法树（AST, Abtract Syntax Tree）。<br>PostCSS常用插件 （用这些插件集合其实已经可以代替 三大 css 预处理器）</p>
+<pre><code>cssnext, 未来语法，颜色函数...
+postcss-import, 导入文件
+autoprefixer, 自动前缀
+precss, 集成sass预处理器，功能强大包括 autoprefixer mixins
+postcss-mixins, 混合宏，是用类似sass的混合宏，不可与 precss 混用
+postcss-conditions 逻辑判断
+...</code></pre><p>目前 Postcss 在一般项目中的用途</p>
+<p>  使用其 autoprefixer 插件，为css 属性增加前缀<br>  创建 postcss.config.js</p>
+<pre><code>// webpack.config.js
+{
+    test: /\.less$/,
+    loader: ExtractTextWebpackPlugin.extract([
+        {loader: &apos;css-loader&apos;, options: { minimize: true }},
+        &apos;postcss-loader&apos;, // 要在预处理器处理完之后，在使用 postcss-loader 
+        &apos;less-loader&apos;,
+    ]),
+}
+
+// postcss.config.js
+module.exports = {
+    plugins: [
+        require(&apos;autoprefixer&apos;)({
+            &apos;browsers&apos;: [&apos;&gt; 1%&apos;, &apos;last 2 versions&apos;]
+        })
+    ]
+}</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="笑余笙 微信支付">
+        <p>微信打赏</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    笑余笙
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/post/2018-01-02-20180102/" title="sass（scss）、less、postcss、stylus等的用法与区别">http://yoursite.com/post/2018-01-02-20180102/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/2017-06-28-20170628/" rel="next" title="js判断当前浏览类型">
+                <i class="fa fa-chevron-left"></i> js判断当前浏览类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/2018-09-17-20180917/" rel="prev" title="收藏 -记录">
+                收藏 -记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="笑余笙">
+            
+              <p class="site-author-name" itemprop="name">笑余笙</p>
+              <p class="site-description motion-element" itemprop="description">努力奔跑</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiuyuan-wang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:15665259705@139.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一-Sass-Scss、Less、stylus是什么"><span class="nav-number">1.</span> <span class="nav-text">一. Sass/Scss、Less、stylus是什么?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本介绍"><span class="nav-number">2.</span> <span class="nav-text">基本介绍:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sass-scss"><span class="nav-number">2.1.</span> <span class="nav-text">sass/scss</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#less"><span class="nav-number">2.2.</span> <span class="nav-text">less</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#stylus"><span class="nav-number">2.3.</span> <span class="nav-text">stylus</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#基本语法"><span class="nav-number">2.4.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#总结："><span class="nav-number">2.5.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Postcss-是什么样的一种存在？"><span class="nav-number">3.</span> <span class="nav-text">Postcss 是什么样的一种存在？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">笑余笙</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
