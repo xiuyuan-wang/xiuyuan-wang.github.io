@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="vue,">
+  <meta name="keywords" content="日志,">
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="vuex的state，actions，getters，mutations的使用 分为两种情况，有module和没有mudule">
-<meta name="keywords" content="vue">
+<meta name="description" content="本文讲解JavaScript各种继承方式和优缺点。">
+<meta name="keywords" content="日志">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vuex的state，actions，getters，mutations的使用">
-<meta property="og:url" content="http://yoursite.com/post/2018-09-19-20180919/index.html">
+<meta property="og:title" content="JavaScript深入之继承的多种方式和优缺点">
+<meta property="og:url" content="http://yoursite.com/post/2019-01-17-20190201/index.html">
 <meta property="og:site_name" content="倘若有一天">
-<meta property="og:description" content="vuex的state，actions，getters，mutations的使用 分为两种情况，有module和没有mudule">
+<meta property="og:description" content="本文讲解JavaScript各种继承方式和优缺点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-09T01:44:46.395Z">
+<meta property="og:updated_time" content="2020-03-10T09:05:07.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vuex的state，actions，getters，mutations的使用">
-<meta name="twitter:description" content="vuex的state，actions，getters，mutations的使用 分为两种情况，有module和没有mudule">
+<meta name="twitter:title" content="JavaScript深入之继承的多种方式和优缺点">
+<meta name="twitter:description" content="本文讲解JavaScript各种继承方式和优缺点。">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/post/2018-09-19-20180919/">
+  <link rel="canonical" href="http://yoursite.com/post/2019-01-17-20190201/">
 
 
 
 
 
-  <title>vuex的state，actions，getters，mutations的使用 | 倘若有一天</title>
+  <title>JavaScript深入之继承的多种方式和优缺点 | 倘若有一天</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2018-09-19-20180919/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/2019-01-17-20190201/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="笑余笙">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vuex的state，actions，getters，mutations的使用</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript深入之继承的多种方式和优缺点</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T20:48:18+08:00">
-                2018-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-17T17:25:23+08:00">
+                2019-01-17
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue-vuex/" itemprop="url" rel="index">
-                    <span itemprop="name">vue - vuex</span>
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
                   </a>
                 </span>
 
@@ -351,344 +351,182 @@
       
 
       
-        <p>vuex的state，actions，getters，mutations的使用 分为两种情况，有module和没有mudule</p>
+        <p>本文讲解JavaScript各种继承方式和优缺点。</p>
 <a id="more"></a>
 
-<p>##有module</p>
-<p>###看getters，有四种写法</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;button @click=&quot;getUserName()&quot;&gt;
-      点击获取用户名
-    &lt;/button&gt;
-    &lt;div&gt;获取到的用户名：{{userName}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<h5 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1.原型链继承"></a>1.原型链继承</h5><pre><code>function Parent () {
+    this.name = &apos;kevin&apos;;
+}
 
-&lt;script&gt;
-  import {mapGetters} from &apos;vuex&apos;
+Parent.prototype.getName = function () {
+    console.log(this.name);
+}
 
-  export default {
-    name: &quot;login&quot;,
-    data: function () {
-      return {
-        userName: &apos;&apos;,
-      }
-    },
-    methods:{
-      getUserName:function(){
-        /**
-         *  调用getters有四种方法
-         *  第一种：this.userName = this.gettersName ，需要在computed中写...mapGetters
-         *  第二种：this.userName = this[&apos;gettersName&apos;] ，需要在computed中写...mapGetters
-         *  第三种：this.userName = this.$store.getters.gettersName，直接调用getters.js中的gettersName方法，不需要mapGetters
-         *  第四种：this.userName = this.$store.getters[&apos;gettersName&apos;]，直接调用getters.js中的gettersName方法，不需要mapGetters
-         */
-        console.log(&apos;没有module的getters：&apos;+JSON.stringify(this.$store.getters))//{&quot;gettersName&quot;:&quot;111&quot;}
-        this.userName = this.$store.getters[&apos;gettersName&apos;]
-      }
-    },
-    computed: {
-      ...mapGetters([
-        &apos;gettersName&apos;
-      ])
-    },
-  }
-&lt;/script&gt;
+function Child () {
 
-&lt;style scoped&gt;
+}
 
-&lt;/style&gt;</code></pre><p>###actions有三种写法：</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;input type=&quot;number&quot; v-model=&quot;userName&quot; placeholder=&quot;请输入用户名&quot; /&gt;
-    &lt;div @click=&apos;loginClick()&apos;&gt; 登录&lt;/div&gt;
-    &lt;div&gt;{{test}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+Child.prototype = new Parent();
 
-&lt;script&gt;
-  import { mapActions } from &apos;vuex&apos;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      ...mapActions([
-        &apos;setActionName&apos;
-      ]),
+var child1 = new Child();
 
-      loginClick:function () {
-        /**
-         *  调用actions有三种方法
-         *  第一种：this.setActionName(this.userName)，需要在methods中写...mapActions
-         *  第二种：this[&apos;setActionName&apos;](this.userName)，需要在methods中写...mapActions
-         *  第三种：this.$store.dispatch(&apos;setActionName&apos;,this.userName)，直接调用actions.js中的setActionName方法，不需要mapActions
-         */
-        this.$store.dispatch(&apos;setActionName&apos;,this.userName)
-      },
-    },
-    computed:{
-      test(){
-        return this.$store.state.name;
-      }
+console.log(child1.getName()) // kevin</code></pre><p>问题：</p>
+<p>1.引用类型的属性被所有实例共享，举个例子：</p>
+<pre><code>function Parent () {
+    this.names = [&apos;kevin&apos;, &apos;daisy&apos;];
+}
+
+function Child () {
+
+}
+
+Child.prototype = new Parent();
+
+var child1 = new Child();
+
+child1.names.push(&apos;yayu&apos;);
+
+console.log(child1.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]
+
+var child2 = new Child();
+
+console.log(child2.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]</code></pre><p>2.在创建 Child 的实例时，不能向Parent传参</p>
+<h4 id="2-借用构造函数-经典继承"><a href="#2-借用构造函数-经典继承" class="headerlink" title="2.借用构造函数(经典继承)"></a>2.借用构造函数(经典继承)</h4><pre><code>function Parent () {
+    this.names = [&apos;kevin&apos;, &apos;daisy&apos;];
+}
+
+function Child () {
+    Parent.call(this);
+}
+
+var child1 = new Child();
+
+child1.names.push(&apos;yayu&apos;);
+
+console.log(child1.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]
+
+var child2 = new Child();
+
+console.log(child2.names); // [&quot;kevin&quot;, &quot;daisy&quot;]</code></pre><p>优点：</p>
+<p>1.避免了引用类型的属性被所有实例共享</p>
+<p>2.可以在 Child 中向 Parent 传参</p>
+<p>举个例子：</p>
+<p>function Parent (name) {<br>    this.name = name;<br>}</p>
+<p>function Child (name) {<br>    Parent.call(this, name);<br>}</p>
+<p>var child1 = new Child(‘kevin’);</p>
+<p>console.log(child1.name); // kevin</p>
+<p>var child2 = new Child(‘daisy’);</p>
+<p>console.log(child2.name); // daisy</p>
+<p>缺点：</p>
+<p>方法都在构造函数中定义，每次创建实例都会创建一遍方法。</p>
+<h4 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3.组合继承"></a>3.组合继承</h4><p>原型链继承和经典继承双剑合璧。</p>
+<pre><code>function Parent (name) {
+    this.name = name;
+    this.colors = [&apos;red&apos;, &apos;blue&apos;, &apos;green&apos;];
+}
+
+Parent.prototype.getName = function () {
+    console.log(this.name)
+}
+
+function Child (name, age) {
+
+    Parent.call(this, name);
+
+    this.age = age;
+
+}
+
+Child.prototype = new Parent();
+Child.prototype.constructor = Child;
+
+var child1 = new Child(&apos;kevin&apos;, &apos;18&apos;);
+
+child1.colors.push(&apos;black&apos;);
+
+console.log(child1.name); // kevin
+console.log(child1.age); // 18
+console.log(child1.colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;]
+
+var child2 = new Child(&apos;daisy&apos;, &apos;20&apos;);
+
+console.log(child2.name); // daisy
+console.log(child2.age); // 20
+console.log(child2.colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</code></pre><p>优点：融合原型链继承和构造函数的优点，是 JavaScript 中最常用的继承模式。</p>
+<h4 id="4-原型式继承"><a href="#4-原型式继承" class="headerlink" title="4.原型式继承"></a>4.原型式继承</h4><pre><code>function createObj(o) {
+    function F(){}
+    F.prototype = o;
+    return new F();
+}</code></pre><p>就是 ES5 Object.create 的模拟实现，将传入的对象作为创建的对象的原型。</p>
+<p>缺点：</p>
+<p>包含引用类型的属性值始终都会共享相应的值，这点跟原型链继承一样。</p>
+<pre><code>var person = {
+    name: &apos;kevin&apos;,
+    friends: [&apos;daisy&apos;, &apos;kelly&apos;]
+}
+
+var person1 = createObj(person);
+var person2 = createObj(person);
+
+person1.name = &apos;person1&apos;;
+console.log(person2.name); // kevin
+
+person1.firends.push(&apos;taylor&apos;);
+console.log(person2.friends); // [&quot;daisy&quot;, &quot;kelly&quot;, &quot;taylor&quot;]</code></pre><p>注意：修改person1.name的值，person2.name的值并未发生改变，并不是因为person1和person2有独立的 name 值，而是因为person1.name = ‘person1’，给person1添加了 name 值，并非修改了原型上的 name 值。</p>
+<ol start="5">
+<li>寄生式继承</li>
+</ol>
+<p>创建一个仅用于封装继承过程的函数，该函数在内部以某种形式来做增强对象，最后返回对象。</p>
+<pre><code>function createObj (o) {
+    var clone = Object.create(o);
+    clone.sayName = function () {
+        console.log(&apos;hi&apos;);
     }
-  }
-&lt;/script&gt;
+    return clone;
+}</code></pre><p>缺点：跟借用构造函数模式一样，每次创建对象都会创建一遍方法</p>
+<h4 id="6-寄生组合式继承"><a href="#6-寄生组合式继承" class="headerlink" title="6. 寄生组合式继承"></a>6. 寄生组合式继承</h4><p>为了方便大家阅读，在这里重复一下组合继承的代码：</p>
+<pre><code>function Box(name) {
+    this.name = name;
+    this.arr = [&apos;哥哥&apos;,&apos;妹妹&apos;,&apos;父母&apos;];
+}
+Box.prototype.run = function () {
+    return this.name;
+};
+function Desk(name, age) {
+    Box.call(this, name);//第二次调用 Box
+    this.age = age;
+}
+Desk.prototype = new Box();//第一次调用 Box</code></pre><p>以上代码是之前的组合继承，那么寄生组合继承寄生组合继承，解决了两次调用的问题</p>
+<pre><code>function obj(o) {
+    function F() {}
+    F.prototype = o;
+    return new F();
+}
+function create(box, desk) {
+    var f = obj(box.prototype);
+    f.constructor = desk;
+    desk.prototype = f;
+}
+function Box(name) {
+    this.name = name;
+    this.arr = [&apos;哥哥&apos;,&apos;妹妹&apos;,&apos;父母&apos;];
+}
+Box.prototype.run = function () {
+    return this.name;
+};
 
-&lt;style scoped&gt;
+function Desk(name, age) {
+    Box.call(this, name);
+    this.age = age;
+}
 
-&lt;/style&gt;</code></pre><p>###mutations有一种写法：</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;input type=&quot;number&quot; v-model=&quot;userName&quot; placeholder=&quot;请输入用户名&quot; /&gt;
-    &lt;button @click=&apos;loginClick()&apos;&gt; 登录&lt;/button&gt;
-    &lt;div&gt;{{test}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      loginClick:function () {
-        /**
-         *  调用mutations有一种方法
-         *   this.$store.commit(&apos;setMutationName&apos;,this.userName)
-         */
-        this.$store.commit(&apos;setMutationName&apos;,this.userName)
-      },
-    },
-    computed:{
-      test(){
-        return this.$store.state.name;
-      }
-    }
-
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre><p>##state有四种写法：</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;button @click=&apos;loginClick()&apos;&gt; 获取用户名&lt;/button&gt;
-    &lt;div&gt;获取到的用户名：{{userName}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  import { mapState } from &apos;vuex&apos;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      loginClick:function () {
-        /**
-         *  调用state有四种方法
-         *  第一种：this.userName = this.$store.state.name,不需要...mapstate
-         *  第二种：this.userName = this.$store.state[&apos;name&apos;],不需要...mapstate
-         *  第三种：this.userName = this.getName，需要...mapstate
-         *  第四种：this.userName = this[&apos;getName&apos;]，需要...mapstate
-         */
-        console.log(&apos;没有module的state：&apos;+JSON.stringify(this.$store.state))//{&quot;name&quot;:&quot;111&quot;}
-        this.userName = this[&apos;getName&apos;]
-      },
-    },
-    computed:{
-      ...mapState({
-        getName: state =&gt; state.name,
-      }),
-    }
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre><p>##再来看看有module的情况：</p>
-<p>###接下来看看有module时getters的使用：getters有两种使用方法</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;button @click=&quot;getUserName()&quot;&gt;
-      点击获取用户名
-    &lt;/button&gt;
-    &lt;div&gt;获取到的用户名：{{userName}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  import {mapGetters} from &apos;vuex&apos;
-
-  export default {
-    name: &quot;login&quot;,
-    data: function () {
-      return {
-        userName: &apos;&apos;,
-      }
-    },
-    methods:{
-      getUserName:function(){
-        /**
-         *  调用getters有两种方法
-         *  第一种：this.userName = this[&apos;mod1/getUserName&apos;] ，需要在computed中写...mapGetters
-         *  第二种：this.userName = this.$store.getters[&apos;mod1/getUserName&apos;]，直接调用gettersOne.js中的mod1的getUserName方法，不需要mapGetters
-         */
-        console.log(&apos;有module的getters：&apos;+JSON.stringify(this.$store.getters))//{&quot;getAddress&quot;:&quot;西安市&quot;,&quot;mod1/getUserName&quot;:&quot;testName&quot;,&quot;mod1/getUserNameTest&quot;:&quot;testName&quot;}
-        this.userName = this.$store.getters[&apos;mod1/getUserName&apos;];
-      }
-    },
-    computed: {
-      ...mapGetters([
-        &apos;mod1/getUserName&apos;
-      ])
-    },
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre><p>###有module的state：state有四种使用方法</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;button @click=&apos;loginClick()&apos;&gt; 获取用户名&lt;/button&gt;
-    &lt;div&gt;获取到的用户名：{{userName}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  import { mapState } from &apos;vuex&apos;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      loginClick:function () {
-        /**
-         *  调用state有四种方法
-         *  第一种：this.userName = this.$store.state.mod1.userName,不需要...mapstate
-         *  第二种：this.userName = this.$store.state.mod1[&apos;userName&apos;],不需要...mapstate
-         *  第三种：this.userName = this.getName，需要...mapstate
-         *  第四种：this.userName = this[&apos;getName&apos;]，需要...mapstate
-         */
-        console.log(&apos;===&apos;+ JSON.stringify(this.$store.state))//{&quot;address&quot;:&quot;西安市&quot;,&quot;mod1&quot;:{&quot;userName&quot;:&quot;testName&quot;}}
-        this.userName = this.getName
-      },
-    },
-    computed:{
-      ...mapState({
-        /**
-         * 下面的方法也可以写为
-         *  getName: function(state){
-              console.log(JSON.stringify(state))//{&quot;address&quot;:&quot;西安市&quot;,&quot;mod1&quot;:{&quot;userName&quot;:&quot;testName&quot;}}
-              return  state.mod1.userName
-           }
-         * @param state
-         * @returns {*}
-         */
-        getName: state =&gt;state.mod1.userName//或者getName: state =&gt;state.mod1[&apos;userName&apos;]
-      }),
-    }
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre><p>###有module的actions：action有两种使用方法</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;input type=&quot;number&quot; v-model=&quot;userName&quot; placeholder=&quot;请输入用户名&quot; /&gt;
-    &lt;div @click=&apos;loginClick()&apos;&gt; 登录&lt;/div&gt;
-    &lt;div&gt;{{test}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  import { mapActions } from &apos;vuex&apos;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      ...mapActions([
-        &apos;mod1/changeName&apos;
-      ]),
-
-      loginClick:function () {
-        /**
-         *  调用actions有两种方法
-         *  第一种：this[&apos;mod1/changeName&apos;](this.userName)，需要在methods中写...mapActions
-         *  第二种：this.$store.dispatch(&apos;mod1/changeName&apos;,this.userName)，直接调用actions.js中的changeName方法，不需要mapActions
-         */
-        this[&apos;mod1/changeName&apos;](this.userName)
-      },
-    },
-    computed:{
-      test(){
-        return this.$store.state.mod1.userName;
-      }
-    }
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre><p>###有module的mutations：mutations有一种使用方法</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;input type=&quot;number&quot; v-model=&quot;userName&quot; placeholder=&quot;请输入用户名&quot; /&gt;
-    &lt;button @click=&apos;loginClick()&apos;&gt; 登录&lt;/button&gt;
-    &lt;div&gt;{{test}}&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script&gt;
-  export default {
-    name: &quot;login&quot;,
-    data:function () {
-      return{
-        userName:&apos;&apos;,
-      }
-    },
-    methods:{
-      loginClick:function () {
-        /**
-         *  调用mutations有一种方法
-         *   this.$store.commit(&apos;setName&apos;,this.userName)
-         */
-        this.$store.commit(&apos;mod1/setName&apos;,this.userName)
-      },
-    },
-    computed:{
-      test(){
-        return this.$store.state.mod1.userName;
-      }
-    }
-
-  }
-&lt;/script&gt;
-
-&lt;style scoped&gt;
-
-&lt;/style&gt;</code></pre>
+create(Box, Desk);//通过这里实现继承
+var desk = new Desk(&apos;Lee&apos;,100);
+desk.arr.push(&apos;姐姐&apos;);
+alert(desk.arr);
+alert(desk.run());//只共享了方法
+var desk2 = new Desk(&apos;Jack&apos;, 200);
+alert(desk2.arr);//引用问题解决</code></pre>
       
     </div>
     
@@ -732,7 +570,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/post/2018-09-19-20180919/" title="vuex的state，actions，getters，mutations的使用">http://yoursite.com/post/2018-09-19-20180919/</a>
+    <a href="http://yoursite.com/post/2019-01-17-20190201/" title="JavaScript深入之继承的多种方式和优缺点">http://yoursite.com/post/2019-01-17-20190201/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -755,7 +593,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+            <a href="/tags/日志/" rel="tag"><i class="fa fa-tag"></i> 日志</a>
           
         </div>
       
@@ -768,8 +606,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/2018-09-17-20180917/" rel="next" title="收藏 -记录">
-                <i class="fa fa-chevron-left"></i> 收藏 -记录
+              <a href="/post/2019-01-12-20190112/" rel="next" title="ES6 系列之 defineProperty 与 proxy">
+                <i class="fa fa-chevron-left"></i> ES6 系列之 defineProperty 与 proxy
               </a>
             
           </div>
@@ -778,8 +616,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/2018-09-21-20180921/" rel="prev" title="深入理解vue中的slot与slot-scope">
-                深入理解vue中的slot与slot-scope <i class="fa fa-chevron-right"></i>
+              <a href="/post/2019-01-17-20190117/" rel="prev" title="当勤精进">
+                当勤精进 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -835,8 +673,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -939,6 +786,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-原型链继承"><span class="nav-number">1.</span> <span class="nav-text">1.原型链继承</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#2-借用构造函数-经典继承"><span class="nav-number"></span> <span class="nav-text">2.借用构造函数(经典继承)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-组合继承"><span class="nav-number"></span> <span class="nav-text">3.组合继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-原型式继承"><span class="nav-number"></span> <span class="nav-text">4.原型式继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-寄生组合式继承"><span class="nav-number"></span> <span class="nav-text">6. 寄生组合式继承</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
