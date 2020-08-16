@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js处理的8种跨域方法 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.c6efea83.css" as="style"><link rel="preload" href="/assets/js/app.e08950d5.js" as="script"><link rel="preload" href="/assets/js/3.15c1e559.js" as="script"><link rel="preload" href="/assets/js/1.3bbf4713.js" as="script"><link rel="preload" href="/assets/js/34.c1fd6279.js" as="script"><link rel="prefetch" href="/assets/js/10.22edcccb.js"><link rel="prefetch" href="/assets/js/11.c43be9d8.js"><link rel="prefetch" href="/assets/js/12.4e9744cd.js"><link rel="prefetch" href="/assets/js/13.6cae3fdf.js"><link rel="prefetch" href="/assets/js/14.3433e21a.js"><link rel="prefetch" href="/assets/js/15.bbe793fb.js"><link rel="prefetch" href="/assets/js/16.4b8b18be.js"><link rel="prefetch" href="/assets/js/17.83b45696.js"><link rel="prefetch" href="/assets/js/18.f298c292.js"><link rel="prefetch" href="/assets/js/19.8422d769.js"><link rel="prefetch" href="/assets/js/20.e2520c44.js"><link rel="prefetch" href="/assets/js/21.9d6b32d8.js"><link rel="prefetch" href="/assets/js/22.4d2e6a51.js"><link rel="prefetch" href="/assets/js/23.fb2f4192.js"><link rel="prefetch" href="/assets/js/24.d196cc34.js"><link rel="prefetch" href="/assets/js/25.f4cf549d.js"><link rel="prefetch" href="/assets/js/26.4075881c.js"><link rel="prefetch" href="/assets/js/27.698ebabb.js"><link rel="prefetch" href="/assets/js/28.3cdce673.js"><link rel="prefetch" href="/assets/js/29.fa5573d9.js"><link rel="prefetch" href="/assets/js/30.f4e0841d.js"><link rel="prefetch" href="/assets/js/31.432f7451.js"><link rel="prefetch" href="/assets/js/32.d6abfd30.js"><link rel="prefetch" href="/assets/js/33.b33dec22.js"><link rel="prefetch" href="/assets/js/35.3a819d51.js"><link rel="prefetch" href="/assets/js/36.6ae75f5a.js"><link rel="prefetch" href="/assets/js/37.d1a8a4f5.js"><link rel="prefetch" href="/assets/js/38.a87545e9.js"><link rel="prefetch" href="/assets/js/39.c94489aa.js"><link rel="prefetch" href="/assets/js/4.7f91896b.js"><link rel="prefetch" href="/assets/js/40.d79a6994.js"><link rel="prefetch" href="/assets/js/41.ccdcf0dc.js"><link rel="prefetch" href="/assets/js/42.a9e1b9ee.js"><link rel="prefetch" href="/assets/js/43.9ae05090.js"><link rel="prefetch" href="/assets/js/44.14621d5a.js"><link rel="prefetch" href="/assets/js/45.0b9da933.js"><link rel="prefetch" href="/assets/js/5.e9252646.js"><link rel="prefetch" href="/assets/js/6.7afafac1.js"><link rel="prefetch" href="/assets/js/7.70058d2a.js"><link rel="prefetch" href="/assets/js/8.be30ebc6.js"><link rel="prefetch" href="/assets/js/9.ad2618e5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c6efea83.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container no-sidebar" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>倘若有一天</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name">倘若有一天</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/header.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    倘若有一天
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>29</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>8</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>js处理的8种跨域方法</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>js处理的8种跨域方法</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>倘若有一天</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2019-02-12 17:25:23</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      js
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>js处理的8种跨域方法
+</p> <p>这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p> <p>特别注意两点：</p> <p>#1、如果是协议和端口造成的跨域问题“前台”是无能为力的；
+#2、在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。
+要解决跨域的问题，我们可以使用以下几种方法：</p> <h5 id="方法一、通过jsonp跨域"><a href="#方法一、通过jsonp跨域" class="header-anchor">#</a> 方法一、通过jsonp跨域</h5> <p>JSONP包含两部分：回调函数和数据。
+回调函数：当响应到来时要放在当前页面被调用的函数。
+数据：就是传入回调函数中的json数据，也就是回调函数的参数了。</p> <div class="language- extra-class"><pre><code>    /*handleResonse({&quot;data&quot;: &quot;zhe&quot;})*/
+    //原理如下：
+    //当我们通过script标签请求时
+    //后台就会根据相应的参数(json,handleResponse)
+    //来生成相应的json数据(handleResponse({&quot;data&quot;: &quot;zhe&quot;}))
+    //最后这个返回的json数据(代码)就会被放在当前js文件中被执行
+    //至此跨域通信完成
+    //1、使用JS动态生成script标签，进行跨域操作
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+    var script = document.createElement('script');
+    script.src = 'http://www.example.com/data/?callback=handleResponse';
+    document.body.insertBefore(script, document.body.firstChild);
+    --------------------------
+    //2、手动生成script标签
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+    &lt;script src=&quot;http://www.example.com/data/?callback=handleResponse&quot;&gt;&lt;/script&gt;
+    --------------------------
+    //3、使用jQuery进行jsonp操作
+    //jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁
+    //$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
+    &lt;script&gt;
+        $.getJson('http://www.example.com/data/?callback=?',function(jsondata){
+        //处理获得的Json数据
+    });
+    &lt;/script&gt;
+</code></pre></div><p>jsonp虽然很简单，但是有如下缺点：</p> <p>#1）安全问题(请求代码中可能存在安全隐患)</p> <p>#2）要确定jsonp请求是否失败并不容易</p> <h5 id="方法二、通过document-domain-iframe来跨子域-只有在主域相同的时候才能使用该方法"><a href="#方法二、通过document-domain-iframe来跨子域-只有在主域相同的时候才能使用该方法" class="header-anchor">#</a> 方法二、通过document.domain+iframe来跨子域(只有在主域相同的时候才能使用该方法)</h5> <p>#（1）不能通过ajax的方法去请求不同源中的文档。
+#（2）浏览器中不同域的框架之间是不能进行js的交互操作的。</p> <p>所以，在不同的框架之间（父子或同辈），是能够获取到彼此的window对象的，但不能使用获取到的window对象的属性和方法(html5中的postMessage方法是一个例外)，总之，你可以当做是只能获取到一个几乎无用的window对象。</p> <p>例如，在一个页面 http:// www.example.com/a.html 中，有一个iframe框架它的src是http:// example.com/b.html, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的：</p> <div class="language- extra-class"><pre><code>    //  http://www.example.com/a.html 页面中
+     &lt;script&gt;
+     function onLoad(){
+         var iframe = document.getElementById('iframe');
+         var win = iframe.contentWindow;
+         //这里能够获取到iframe中的window对象，但是window对象的属性和方法几乎不可用。
+         var doc = win.document;//这里获取不到iframe中的document对象
+         var name = win.name;//这里获取不到window对象的name属性
+         ······
+     }
+     &lt;iframe id = &quot;iframe&quot; src =&quot;http:// example.com/b.html&quot; onload = &quot;onLoad()&quot;&gt;&lt;/iframe&gt; 
+</code></pre></div><p>所以我们就要用到document.domain</p> <ol><li><p>在页面http:// www.a.com/dir/a.html中设置document.domain：</p> <div class="language- extra-class"><pre><code> 1 &lt;iframe src = &quot;http://script.a.com/dir/b.html&quot; id=&quot;iframe&quot; onload = &quot;loLoad()&quot;&gt;&lt;/iframe&gt;
+ 2 &lt;script&gt;
+ 3 document.domain = &quot;a.com&quot;;//设置成主域
+ 4 function test(){
+ 5     var iframe = document.getElementById(&quot;iframe&quot;);
+ 6     var win = iframe.contentWindow;
+ 7     //在这里就可以操作b.html
+ 8 }
+ 9 &lt;/script&gt;
+</code></pre></div></li> <li><p>在http:// script.a.com/dir/b.html也需要显示的设置document.domain</p> <div class="language- extra-class"><pre><code> &lt;script&gt;
+      document.domain = &quot;a.com&quot;;
+ &lt;/script&gt;
+</code></pre></div></li></ol> <p>注意，document.domain的设置是有限制的：</p> <p>我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。
+　　例如：a.b.c.com 中某个文档的document.domain 可以设成a.b.c.com、b.c.com 、c.com中的任意一个</p> <h5 id="方法三、使用window-name-iframe来进行跨域"><a href="#方法三、使用window-name-iframe来进行跨域" class="header-anchor">#</a> 方法三、使用window.name+iframe来进行跨域</h5> <p>window的name属性特征：name 值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB），即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面window.name都有读写的权限。</p> <p>正是由于window的name属性的特征，所以可以使用window.name来进行跨域。
+　　举例：
+　　1）在一个a.html页面中，有如下代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        window.name = &quot;哈哈，我是页面a设置的值哟！&quot;;
+        //设置window.name的值
+        setTimeout(function(){
+            window.location = 'b.html';
+        },3000);//3秒后把一个新页面载入当前window
+    &lt;/script&gt;
+</code></pre></div><p>2）再在b.html中读取window.name的值：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        alert(window.name);//读取window.name的值
+    &lt;/script&gt;
+</code></pre></div><p>3）a.html载入3秒后，跳转到b.html页面中，结果为  弹出框&quot;哈哈，我是页面a设置的值哟！&quot;</p> <p>#注意：
+#1.window.name的值只能是字符串的形式，这个字符串的大小最大能允许2M左右甚至更大的一个容量，具体取决于不同的浏览器。</p> <p>接下来使用window.name进行跨域举例</p> <p>比如：有一个example.com/a.html页面,需要通过a.html页面里的js来获取另一个位于不同域上的页面cnblogs.com/data.html里的数据。</p> <p>1)创建cnblogs.com/data.html代码：
+<script>
+window.name = &amp;quot;我是data.html的数据，所有可以转化为字符串来传递的数据都可以在这里使用，比如这里可以传递Json数据&amp;quot;;
+</script></p> <p>2)创建example.com/a.html的代码：
+想要即使a.html页面不跳转也能得到data.html里的数据。在a.html页面中使用一个隐藏的iframe来充当一个中间人角色，由iframe去获取data.html的数据，然后a.html再去得到iframe获取到的数据。</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        function getData(){
+        //iframe载入data.html页面会执行此函数
+            var ifr = document.getElementById(&quot;iframe&quot;);
+            ifr.onload = function(){
+            //这个时候iframe和a.html已经处于同一源，可以互相访问
+                var data = ifr.contentWindow.name;
+    //获取iframe中的window.name，也就是data.html中给它设置的数据
+                alert(data);
+            }
+            ifr.src = 'b.html';//这里的b.html为随便一个页面，只要与a.html同源就行，目的是让a.html能够访问到iframe中的东西，否则访问不到
+        }
+    &lt;/script&gt;
+    &lt;iframe id = &quot;iframe&quot; src = &quot;cnblogs.com/data.html&quot; style = &quot;display:none&quot; onload = &quot;getData()&quot;&gt;&lt;/iframe&gt;
+</code></pre></div><h5 id="方法四、使用window-postmessage方法来跨域-不常用"><a href="#方法四、使用window-postmessage方法来跨域-不常用" class="header-anchor">#</a> 方法四、使用window.postMessage方法来跨域(不常用)</h5> <p>window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源(可实现跨域)，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。
+　　message：为要发送的消息，类型只能为字符串；
+　　targetOrigin：用来限定接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 “*”。</p> <p>1)创建www.test.com/a.html页面代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    function onLoad(){
+        var iframe = document.getElementById(&quot;iframe&quot;);
+        var win = iframe.contentWindow;
+        win.postMessage('哈哈，我是来自页面a.html的信息哟！','*');//向不同域的www.script.com/b.html发送消息
+    }
+    &lt;/script&gt;
+    &lt;iframe id=&quot;iframe&quot; src=&quot;www.script.com/b.html&quot; onload=&quot;onLoad()&quot;&gt;&lt;/iframe&gt;
+</code></pre></div><p>2)创建www.script.com/b.html页面代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    window.onmessage = function(e){//注册message时间来接收消息
+        e = e || event;            //获取时间对象
+        alert(e.data);             //通过data属性来得到传送的消息
+    }
+    &lt;/script&gt;
+</code></pre></div><p>优点：使用postMessage来跨域传送数据还是比较直观和方便的；
+缺点： IE6、IE7不支持，所以用不用还得根据实际需要来决定。</p> <h5 id="方法五、使用跨域资源共享（cors）来跨域"><a href="#方法五、使用跨域资源共享（cors）来跨域" class="header-anchor">#</a> 方法五、使用跨域资源共享（CORS）来跨域</h5> <p>CORS：一种跨域访问的机制，可以让AJAX实现跨域访问；CORS允许一个域上的网络应用向另一个域提交跨域AJAX请求。
+服务器设置Access-Control-Allow-Origin HTTP响应头之后，浏览器将会允许跨域请求．
+就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p> <ol><li><p>IE中对CORS的实现是通过xdr</p> <div class="language- extra-class"><pre><code> var xdr = new XDomainRequest();
+ xdr.onload = function(){
+     console.log(xdr.responseText);
+ }
+ xdr.open('get', 'http://www.test.com');
+ ......
+ xdr.send(null);
+</code></pre></div></li> <li><p>其它浏览器中的实现就在xhr中</p> <div class="language- extra-class"><pre><code> var xhr =  new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+ if(xhr.readyState === 4 &amp;&amp; xhr.status === 200){
+         console.log(xhr.responseText);
+         } 
+     }
+ }
+ xhr.open('get', 'http://www.test.com');
+ ......
+ xhr.send(null);
+</code></pre></div></li> <li><p>实现跨浏览器的CORS</p> <div class="language- extra-class"><pre><code> function createCORS(method, url){
+     var xhr = new XMLHttpRequest();
+     if('withCredentials' in xhr){
+         xhr.open(method, url, true);
+     }else if(typeof XDomainRequest != 'undefined'){
+         var xhr = new XDomainRequest();
+         xhr.open(method, url);
+     }else{
+         xhr = null;
+     }
+     return xhr;
+ }
+ var request = createCORS('get', 'http://www.test.com');
+ if(request){
+     request.onload = function(){
+         ......
+     };
+     request.send();
+ }
+</code></pre></div></li></ol> <h5 id="方法六、使用location-hash-iframe来跨域（不常用）"><a href="#方法六、使用location-hash-iframe来跨域（不常用）" class="header-anchor">#</a> 方法六、使用location.hash+iframe来跨域（不常用）</h5> <p>假设域名test.com下的文件a.html要和csdnblogs.com域名下的b.html传递信息。
+　　1) 创建test.com下的a.html页面， 同时在a.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一旦有变化则获取获取hash值，代码如下：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    function startRequest(){
+        var ifr = document.createElement('iframe');
+        //创建一个隐藏的iframe
+        ifr.style.display = 'none';
+        ifr.src = 'http://www.csdnblogs.com/b.html#paramdo';
+        //传递的location.hash 
+        document.body.appendChild(ifr);
+    }
+
+    function checkHash() {
+        try {
+            var data = location.hash ? location.hash.substring(1):'';
+            if (console.log) {
+                console.log('Now the data is ' + data);
+            }
+        } catch (e) {};
+    }
+    setInterval(checkHash, 5000);
+    window.onload = startRequest;
+    &lt;/script&gt;
+</code></pre></div><ol start="2"><li><p>b.html响应请求后再将通过修改a.html的hash值来传递数据，代码如下：</p> <div class="language- extra-class"><pre><code>&lt;script&gt;
+function checkHash() {
+    var data = '';
+    //模拟一个简单的参数处理操作
+    switch (location.hash) {
+        case '#paramdo':
+            data = 'somedata';
+            break;
+        case '#paramset':
+            //do something……
+            break;
+        default:
+            break;
+    }
+    data &amp;&amp; callBack('#' + data);
+}
+
+function callBack(hash) {
+    // ie、chrome的安全机制无法修改parent.location.hash
+    //所以要利用一个中间的www.csdnblogs.com域下的代理iframe
+    var proxy = document.createElement('iframe');
+    proxy.style.display = 'none';
+    proxy.src = 'http://www.csdnblogs.com/c.html' + hash; 
+    // 注意该文件在&quot;www.csdnblogs.com&quot;域下
+    document.body.appendChild(proxy);
+}
+window.onload = checkHash;
+&lt;/script&gt;
+</code></pre></div></li> <li><p>test.com域下的c.html代码：</p> <div class="language- extra-class"><pre><code> &lt;script&gt;
+  //因为parent.parent和自身属于同一个域，所以可以改变其location.hash的值
+ parent.parent.location.hash = self.location.hash.substring(1);
+ &lt;/script&gt;
+</code></pre></div></li></ol> <h5 id="方法七、使用web-sockets来跨域"><a href="#方法七、使用web-sockets来跨域" class="header-anchor">#</a> 方法七、使用Web sockets来跨域</h5> <p>web sockets： 是一种浏览器的API，它的目标是在一个单独的持久连接上提供全双工、双向通信。(同源策略对web sockets不适用)</p> <p>web sockets原理：在JS创建了web socket之后，会有一个HTTP请求发送到浏览器以发起连接。取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为web sockt协议。</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    var socket = new WebSockt('ws://www.test.com');
+    //http-&gt;ws; https-&gt;wss
+    socket.send('hello WebSockt');
+    socket.onmessage = function(event){
+        var data = event.data;
+    }
+</code></pre></div><h5 id="方法八、使用flash-urlloader来跨域"><a href="#方法八、使用flash-urlloader来跨域" class="header-anchor">#</a> 方法八、使用flash URLLoader来跨域</h5> <p>flash有自己的一套安全策略，服务器可以通过crossdomain.xml文件来声明能被哪些域的SWF文件访问，SWF也可以通过API来确定自身能被哪些域的SWF加载。
+例如：当跨域访问资源时，例如从域baidu.com请求域google.com上的数据，我们可以借助flash来发送HTTP请求。</p> <p>跨域实现方式：</p> <p>#1. 首先，修改域google.com上的crossdomain.xml(一般存放在根目录，如果没有需要手动创建) ，把baidu.com加入到白名单。
+#2. 其次，通过Flash URLLoader发送HTTP请求
+#3. 最后，通过Flash API把响应结果传递给JavaScript。</p> <p>Flash URLLoader是一种很普遍的跨域解决方案，不过需要支持iOS的话，这个方案就不可行了。</p> <p>以上八种方法，可以根据项目的实际情况来进行选择应用，个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法。</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.e08950d5.js" defer></script><script src="/assets/js/3.15c1e559.js" defer></script><script src="/assets/js/1.3bbf4713.js" defer></script><script src="/assets/js/34.c1fd6279.js" defer></script>
+  </body>
+</html>

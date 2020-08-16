@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript深入之继承的多种方式和优缺点 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.c6efea83.css" as="style"><link rel="preload" href="/assets/js/app.e08950d5.js" as="script"><link rel="preload" href="/assets/js/3.15c1e559.js" as="script"><link rel="preload" href="/assets/js/1.3bbf4713.js" as="script"><link rel="preload" href="/assets/js/33.b33dec22.js" as="script"><link rel="prefetch" href="/assets/js/10.22edcccb.js"><link rel="prefetch" href="/assets/js/11.c43be9d8.js"><link rel="prefetch" href="/assets/js/12.4e9744cd.js"><link rel="prefetch" href="/assets/js/13.6cae3fdf.js"><link rel="prefetch" href="/assets/js/14.3433e21a.js"><link rel="prefetch" href="/assets/js/15.bbe793fb.js"><link rel="prefetch" href="/assets/js/16.4b8b18be.js"><link rel="prefetch" href="/assets/js/17.83b45696.js"><link rel="prefetch" href="/assets/js/18.f298c292.js"><link rel="prefetch" href="/assets/js/19.8422d769.js"><link rel="prefetch" href="/assets/js/20.e2520c44.js"><link rel="prefetch" href="/assets/js/21.9d6b32d8.js"><link rel="prefetch" href="/assets/js/22.4d2e6a51.js"><link rel="prefetch" href="/assets/js/23.fb2f4192.js"><link rel="prefetch" href="/assets/js/24.d196cc34.js"><link rel="prefetch" href="/assets/js/25.f4cf549d.js"><link rel="prefetch" href="/assets/js/26.4075881c.js"><link rel="prefetch" href="/assets/js/27.698ebabb.js"><link rel="prefetch" href="/assets/js/28.3cdce673.js"><link rel="prefetch" href="/assets/js/29.fa5573d9.js"><link rel="prefetch" href="/assets/js/30.f4e0841d.js"><link rel="prefetch" href="/assets/js/31.432f7451.js"><link rel="prefetch" href="/assets/js/32.d6abfd30.js"><link rel="prefetch" href="/assets/js/34.c1fd6279.js"><link rel="prefetch" href="/assets/js/35.3a819d51.js"><link rel="prefetch" href="/assets/js/36.6ae75f5a.js"><link rel="prefetch" href="/assets/js/37.d1a8a4f5.js"><link rel="prefetch" href="/assets/js/38.a87545e9.js"><link rel="prefetch" href="/assets/js/39.c94489aa.js"><link rel="prefetch" href="/assets/js/4.7f91896b.js"><link rel="prefetch" href="/assets/js/40.d79a6994.js"><link rel="prefetch" href="/assets/js/41.ccdcf0dc.js"><link rel="prefetch" href="/assets/js/42.a9e1b9ee.js"><link rel="prefetch" href="/assets/js/43.9ae05090.js"><link rel="prefetch" href="/assets/js/44.14621d5a.js"><link rel="prefetch" href="/assets/js/45.0b9da933.js"><link rel="prefetch" href="/assets/js/5.e9252646.js"><link rel="prefetch" href="/assets/js/6.7afafac1.js"><link rel="prefetch" href="/assets/js/7.70058d2a.js"><link rel="prefetch" href="/assets/js/8.be30ebc6.js"><link rel="prefetch" href="/assets/js/9.ad2618e5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c6efea83.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container no-sidebar" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>倘若有一天</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name">倘若有一天</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/header.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    倘若有一天
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>29</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>8</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>JavaScript深入之继承的多种方式和优缺点</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>JavaScript深入之继承的多种方式和优缺点</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>倘若有一天</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2019-02-01 17:25:23</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      js
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>本文讲解JavaScript各种继承方式和优缺点。
+</p> <h5 id="_1-原型链继承"><a href="#_1-原型链继承" class="header-anchor">#</a> 1.原型链继承</h5> <div class="language- extra-class"><pre><code>    function Parent () {
+        this.name = 'kevin';
+    }
+
+    Parent.prototype.getName = function () {
+        console.log(this.name);
+    }
+
+    function Child () {
+
+    }
+
+    Child.prototype = new Parent();
+
+    var child1 = new Child();
+
+    console.log(child1.getName()) // kevin
+</code></pre></div><p>问题：</p> <p>1.引用类型的属性被所有实例共享，举个例子：</p> <div class="language- extra-class"><pre><code>    function Parent () {
+        this.names = ['kevin', 'daisy'];
+    }
+
+    function Child () {
+
+    }
+
+    Child.prototype = new Parent();
+
+    var child1 = new Child();
+
+    child1.names.push('yayu');
+
+    console.log(child1.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]
+
+    var child2 = new Child();
+
+    console.log(child2.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]
+</code></pre></div><p>2.在创建 Child 的实例时，不能向Parent传参</p> <h4 id="_2-借用构造函数-经典继承"><a href="#_2-借用构造函数-经典继承" class="header-anchor">#</a> 2.借用构造函数(经典继承)</h4> <div class="language- extra-class"><pre><code>    function Parent () {
+        this.names = ['kevin', 'daisy'];
+    }
+
+    function Child () {
+        Parent.call(this);
+    }
+
+    var child1 = new Child();
+
+    child1.names.push('yayu');
+
+    console.log(child1.names); // [&quot;kevin&quot;, &quot;daisy&quot;, &quot;yayu&quot;]
+
+    var child2 = new Child();
+
+    console.log(child2.names); // [&quot;kevin&quot;, &quot;daisy&quot;]
+</code></pre></div><p>优点：</p> <p>1.避免了引用类型的属性被所有实例共享</p> <p>2.可以在 Child 中向 Parent 传参</p> <p>举个例子：</p> <p>function Parent (name) {
+this.name = name;
+}</p> <p>function Child (name) {
+Parent.call(this, name);
+}</p> <p>var child1 = new Child('kevin');</p> <p>console.log(child1.name); // kevin</p> <p>var child2 = new Child('daisy');</p> <p>console.log(child2.name); // daisy</p> <p>缺点：</p> <p>方法都在构造函数中定义，每次创建实例都会创建一遍方法。</p> <h4 id="_3-组合继承"><a href="#_3-组合继承" class="header-anchor">#</a> 3.组合继承</h4> <p>原型链继承和经典继承双剑合璧。</p> <div class="language- extra-class"><pre><code>    function Parent (name) {
+        this.name = name;
+        this.colors = ['red', 'blue', 'green'];
+    }
+
+    Parent.prototype.getName = function () {
+        console.log(this.name)
+    }
+
+    function Child (name, age) {
+
+        Parent.call(this, name);
+        
+        this.age = age;
+
+    }
+
+    Child.prototype = new Parent();
+    Child.prototype.constructor = Child;
+
+    var child1 = new Child('kevin', '18');
+
+    child1.colors.push('black');
+
+    console.log(child1.name); // kevin
+    console.log(child1.age); // 18
+    console.log(child1.colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;]
+
+    var child2 = new Child('daisy', '20');
+
+    console.log(child2.name); // daisy
+    console.log(child2.age); // 20
+    console.log(child2.colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]
+</code></pre></div><p>优点：融合原型链继承和构造函数的优点，是 JavaScript 中最常用的继承模式。</p> <h4 id="_4-原型式继承"><a href="#_4-原型式继承" class="header-anchor">#</a> 4.原型式继承</h4> <div class="language- extra-class"><pre><code>    function createObj(o) {
+        function F(){}
+        F.prototype = o;
+        return new F();
+    }
+</code></pre></div><p>就是 ES5 Object.create 的模拟实现，将传入的对象作为创建的对象的原型。</p> <p>缺点：</p> <p>包含引用类型的属性值始终都会共享相应的值，这点跟原型链继承一样。</p> <div class="language- extra-class"><pre><code>    var person = {
+        name: 'kevin',
+        friends: ['daisy', 'kelly']
+    }
+
+    var person1 = createObj(person);
+    var person2 = createObj(person);
+
+    person1.name = 'person1';
+    console.log(person2.name); // kevin
+
+    person1.firends.push('taylor');
+    console.log(person2.friends); // [&quot;daisy&quot;, &quot;kelly&quot;, &quot;taylor&quot;]
+</code></pre></div><p>注意：修改person1.name的值，person2.name的值并未发生改变，并不是因为person1和person2有独立的 name 值，而是因为person1.name = 'person1'，给person1添加了 name 值，并非修改了原型上的 name 值。</p> <ol start="5"><li>寄生式继承</li></ol> <p>创建一个仅用于封装继承过程的函数，该函数在内部以某种形式来做增强对象，最后返回对象。</p> <div class="language- extra-class"><pre><code>    function createObj (o) {
+        var clone = Object.create(o);
+        clone.sayName = function () {
+            console.log('hi');
+        }
+        return clone;
+    }
+</code></pre></div><p>缺点：跟借用构造函数模式一样，每次创建对象都会创建一遍方法</p> <h4 id="_6-寄生组合式继承"><a href="#_6-寄生组合式继承" class="header-anchor">#</a> 6. 寄生组合式继承</h4> <p>为了方便大家阅读，在这里重复一下组合继承的代码：</p> <div class="language- extra-class"><pre><code>    function Box(name) {
+        this.name = name;
+        this.arr = ['哥哥','妹妹','父母'];
+    }
+    Box.prototype.run = function () {
+        return this.name;
+    };
+    function Desk(name, age) {
+        Box.call(this, name);//第二次调用 Box
+        this.age = age;
+    }
+    Desk.prototype = new Box();//第一次调用 Box
+</code></pre></div><p>以上代码是之前的组合继承，那么寄生组合继承寄生组合继承，解决了两次调用的问题</p> <div class="language- extra-class"><pre><code>    function obj(o) {
+        function F() {}
+        F.prototype = o;
+        return new F();
+    }
+    function create(box, desk) {
+        var f = obj(box.prototype);
+        f.constructor = desk;
+        desk.prototype = f;
+    }
+    function Box(name) {
+        this.name = name;
+        this.arr = ['哥哥','妹妹','父母'];
+    }
+    Box.prototype.run = function () {
+        return this.name;
+    };
+
+    function Desk(name, age) {
+        Box.call(this, name);
+        this.age = age;
+    }
+
+    create(Box, Desk);//通过这里实现继承
+    var desk = new Desk('Lee',100);
+    desk.arr.push('姐姐');
+    alert(desk.arr);
+    alert(desk.run());//只共享了方法
+    var desk2 = new Desk('Jack', 200);
+    alert(desk2.arr);//引用问题解决
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.e08950d5.js" defer></script><script src="/assets/js/3.15c1e559.js" defer></script><script src="/assets/js/1.3bbf4713.js" defer></script><script src="/assets/js/33.b33dec22.js" defer></script>
+  </body>
+</html>

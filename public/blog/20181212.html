@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES6 使用手册 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.c6efea83.css" as="style"><link rel="preload" href="/assets/js/app.e08950d5.js" as="script"><link rel="preload" href="/assets/js/3.15c1e559.js" as="script"><link rel="preload" href="/assets/js/1.3bbf4713.js" as="script"><link rel="preload" href="/assets/js/28.3cdce673.js" as="script"><link rel="prefetch" href="/assets/js/10.22edcccb.js"><link rel="prefetch" href="/assets/js/11.c43be9d8.js"><link rel="prefetch" href="/assets/js/12.4e9744cd.js"><link rel="prefetch" href="/assets/js/13.6cae3fdf.js"><link rel="prefetch" href="/assets/js/14.3433e21a.js"><link rel="prefetch" href="/assets/js/15.bbe793fb.js"><link rel="prefetch" href="/assets/js/16.4b8b18be.js"><link rel="prefetch" href="/assets/js/17.83b45696.js"><link rel="prefetch" href="/assets/js/18.f298c292.js"><link rel="prefetch" href="/assets/js/19.8422d769.js"><link rel="prefetch" href="/assets/js/20.e2520c44.js"><link rel="prefetch" href="/assets/js/21.9d6b32d8.js"><link rel="prefetch" href="/assets/js/22.4d2e6a51.js"><link rel="prefetch" href="/assets/js/23.fb2f4192.js"><link rel="prefetch" href="/assets/js/24.d196cc34.js"><link rel="prefetch" href="/assets/js/25.f4cf549d.js"><link rel="prefetch" href="/assets/js/26.4075881c.js"><link rel="prefetch" href="/assets/js/27.698ebabb.js"><link rel="prefetch" href="/assets/js/29.fa5573d9.js"><link rel="prefetch" href="/assets/js/30.f4e0841d.js"><link rel="prefetch" href="/assets/js/31.432f7451.js"><link rel="prefetch" href="/assets/js/32.d6abfd30.js"><link rel="prefetch" href="/assets/js/33.b33dec22.js"><link rel="prefetch" href="/assets/js/34.c1fd6279.js"><link rel="prefetch" href="/assets/js/35.3a819d51.js"><link rel="prefetch" href="/assets/js/36.6ae75f5a.js"><link rel="prefetch" href="/assets/js/37.d1a8a4f5.js"><link rel="prefetch" href="/assets/js/38.a87545e9.js"><link rel="prefetch" href="/assets/js/39.c94489aa.js"><link rel="prefetch" href="/assets/js/4.7f91896b.js"><link rel="prefetch" href="/assets/js/40.d79a6994.js"><link rel="prefetch" href="/assets/js/41.ccdcf0dc.js"><link rel="prefetch" href="/assets/js/42.a9e1b9ee.js"><link rel="prefetch" href="/assets/js/43.9ae05090.js"><link rel="prefetch" href="/assets/js/44.14621d5a.js"><link rel="prefetch" href="/assets/js/45.0b9da933.js"><link rel="prefetch" href="/assets/js/5.e9252646.js"><link rel="prefetch" href="/assets/js/6.7afafac1.js"><link rel="prefetch" href="/assets/js/7.70058d2a.js"><link rel="prefetch" href="/assets/js/8.be30ebc6.js"><link rel="prefetch" href="/assets/js/9.ad2618e5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c6efea83.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container no-sidebar" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>倘若有一天</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name">倘若有一天</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/header.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    倘若有一天
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>29</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>8</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-blog"></i>
+  博客
+</a></div><div class="nav-item"><a href="/days/" class="nav-link"><i class="iconfont reco-api"></i>
+  日常积累
+</a></div><div class="nav-item"><a href="/knows/" class="nav-link"><i class="iconfont reco-api"></i>
+  基础知识
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5d6f947051882537fb103bc1" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xiuyuan-wang" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>ES6 使用手册</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>倘若有一天</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>ES6 使用手册</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>倘若有一天</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2018-11-12 08:23:18</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      js
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>ES6 使用手册
+</p> <h5 id="_1-let-和-const"><a href="#_1-let-和-const" class="header-anchor">#</a> 1. let 和 const</h5> <p>在我们开发的时候，可能认为应该默认使用 let 而不是 var，这种情况下，对于需要写保护的变量要使用 const。</p> <p>然而另一种做法日益普及：默认使用 const，只有当确实需要改变变量的值的时候才使用 let。这是因为大部分的变量的值在初始化后不应再改变，而预料之外的变量的修改是很多 bug 的源头。</p> <div class="language- extra-class"><pre><code>  // 例子 1-1
+
+  // bad
+  var foo = 'bar';
+
+  // good
+  let foo = 'bar';
+
+  // better
+  const foo = 'bar';
+</code></pre></div><h5 id="_2-模板字符串"><a href="#_2-模板字符串" class="header-anchor">#</a> 2. 模板字符串</h5> <h6 id="需要拼接字符串的时候尽量改成使用模板字符串"><a href="#需要拼接字符串的时候尽量改成使用模板字符串" class="header-anchor">#</a> 需要拼接字符串的时候尽量改成使用模板字符串:</h6> <div class="language- extra-class"><pre><code>// 例子 2-1
+// bad
+const foo = 'this is a' + example;
+// good
+const foo = `this is a ${example}`;
+</code></pre></div><h6 id="_2-标签模板"><a href="#_2-标签模板" class="header-anchor">#</a> 2. 标签模板</h6> <p>可以借助标签模板优化书写方式:</p> <div class="language- extra-class"><pre><code>let url = oneLine `
+    www.taobao.com/example/index.html
+    ?foo=${foo}
+    &amp;bar=${bar}
+`;
+console.log(url); // www.taobao.com/example/index.html?foo=foo&amp;bar=bar
+</code></pre></div><p>oneLine 的源码可以参考 《ES6 系列之模板字符串》</p> <h5 id="_3-箭头函数"><a href="#_3-箭头函数" class="header-anchor">#</a> 3. 箭头函数</h5> <p>优先使用箭头函数，不过以下几种情况避免使用：</p> <h6 id="_1-使用箭头函数定义对象的方法"><a href="#_1-使用箭头函数定义对象的方法" class="header-anchor">#</a> 1. 使用箭头函数定义对象的方法</h6> <div class="language- extra-class"><pre><code>// 例子 3-1
+
+// bad
+let foo = {
+  value: 1,
+  getValue: () =&gt; console.log(this.value)
+}
+
+foo.getValue();  // undefined
+</code></pre></div><h6 id="_2-定义原型方法"><a href="#_2-定义原型方法" class="header-anchor">#</a> 2. 定义原型方法</h6> <div class="language- extra-class"><pre><code>// 例子 3-2
+
+// bad
+function Foo() {
+  this.value = 1
+}
+
+Foo.prototype.getValue = () =&gt; console.log(this.value)
+
+let foo = new Foo()
+foo.getValue();  // undefined
+</code></pre></div><h6 id="_3-作为事件的回调函数"><a href="#_3-作为事件的回调函数" class="header-anchor">#</a> 3. 作为事件的回调函数</h6> <div class="language- extra-class"><pre><code>// 例子 3-3
+
+// bad
+const button = document.getElementById('myButton');
+button.addEventListener('click', () =&gt; {
+    console.log(this === window); // =&gt; true
+    this.innerHTML = 'Clicked button';
+});
+</code></pre></div><h5 id="_4-symbol"><a href="#_4-symbol" class="header-anchor">#</a> 4. Symbol</h5> <h6 id="_1-唯一值"><a href="#_1-唯一值" class="header-anchor">#</a> 1. 唯一值</h6> <div class="language- extra-class"><pre><code>// 例子 4-1
+// bad
+// 1. 创建的属性会被 for-in 或 Object.keys() 枚举出来
+// 2. 一些库可能在将来会使用同样的方式，这会与你的代码发生冲突
+if (element.isMoving) {
+  smoothAnimations(element);
+}
+element.isMoving = true;
+
+// good
+if (element.__$jorendorff_animation_library$PLEASE_DO_NOT_USE_THIS_PROPERTY$isMoving__) {
+  smoothAnimations(element);
+}
+element.__$jorendorff_animation_library$PLEASE_DO_NOT_USE_THIS_PROPERTY$isMoving__ = true;
+
+// better
+var isMoving = Symbol(&quot;isMoving&quot;);
+
+...
+
+if (element[isMoving]) {
+  smoothAnimations(element);
+}
+element[isMoving] = true;
+</code></pre></div><h6 id="_2-魔术字符串"><a href="#_2-魔术字符串" class="header-anchor">#</a> 2. 魔术字符串</h6> <p>魔术字符串指的是在代码之中多次出现、与代码形成强耦合的某一个具体的字符串或者数值。</p> <p>魔术字符串不利于修改和维护，风格良好的代码，应该尽量消除魔术字符串，改由含义清晰的变量代替。</p> <div class="language- extra-class"><pre><code>// 例子 4-1
+
+// bad
+const TYPE_AUDIO = 'AUDIO'
+const TYPE_VIDEO = 'VIDEO'
+const TYPE_IMAGE = 'IMAGE'
+
+// good
+const TYPE_AUDIO = Symbol()
+const TYPE_VIDEO = Symbol()
+const TYPE_IMAGE = Symbol()
+
+function handleFileResource(resource) {
+  switch(resource.type) {
+    case TYPE_AUDIO:
+      playAudio(resource)
+      break
+    case TYPE_VIDEO:
+      playVideo(resource)
+      break
+    case TYPE_IMAGE:
+      previewImage(resource)
+      break
+    default:
+      throw new Error('Unknown type of resource')
+  }
+}
+</code></pre></div><h6 id="_3-私有变量"><a href="#_3-私有变量" class="header-anchor">#</a> 3. 私有变量</h6> <p>Symbol 也可以用于私有变量的实现。
+// 例子 4-3</p> <div class="language- extra-class"><pre><code>const Example = (function() {
+    var _private = Symbol('private');
+
+    class Example {
+        constructor() {
+          this[_private] = 'private';
+        }
+        getName() {
+          return this[_private];
+        }
+    }
+
+    return Example;
+})();
+
+var ex = new Example();
+
+console.log(ex.getName()); // private
+console.log(ex.name); // undefined
+</code></pre></div><h5 id="_5-set-和-map"><a href="#_5-set-和-map" class="header-anchor">#</a> 5. Set 和 Map</h5> <h6 id="_1-数组去重"><a href="#_1-数组去重" class="header-anchor">#</a> 1. 数组去重</h6> <div class="language- extra-class"><pre><code>/ 例子 5-1
+[...new Set(array)]
+</code></pre></div><h6 id="_2-条件语句的优化"><a href="#_2-条件语句的优化" class="header-anchor">#</a> 2. 条件语句的优化</h6> <div class="language- extra-class"><pre><code>// 例子 5-2
+// 根据颜色找出对应的水果
+
+// bad
+function test(color) {
+  switch (color) {
+    case 'red':
+      return ['apple', 'strawberry'];
+    case 'yellow':
+      return ['banana', 'pineapple'];
+    case 'purple':
+      return ['grape', 'plum'];
+    default:
+      return [];
+  }
+}
+
+test('yellow'); // ['banana', 'pineapple']
+
+// good
+const fruitColor = {
+  red: ['apple', 'strawberry'],
+  yellow: ['banana', 'pineapple'],
+  purple: ['grape', 'plum']
+};
+
+function test(color) {
+  return fruitColor[color] || [];
+}
+
+// better
+const fruitColor = new Map()
+  .set('red', ['apple', 'strawberry'])
+  .set('yellow', ['banana', 'pineapple'])
+  .set('purple', ['grape', 'plum']);
+
+function test(color) {
+  return fruitColor.get(color) || [];
+}
+</code></pre></div><h5 id="_6-for-of"><a href="#_6-for-of" class="header-anchor">#</a> 6. for of</h5> <h6 id="_1-遍历范围"><a href="#_1-遍历范围" class="header-anchor">#</a> 1. 遍历范围</h6> <p>for...of 循环可以使用的范围包括：</p> <div class="language- extra-class"><pre><code>数组
+Set
+Map
+类数组对象，如 arguments 对象、DOM NodeList 对象
+Generator 对象
+字符串
+</code></pre></div><h6 id="_2-优势"><a href="#_2-优势" class="header-anchor">#</a> 2. 优势</h6> <p>ES2015 引入了 for..of 循环，它结合了 forEach 的简洁性和中断循环的能力：</p> <div class="language- extra-class"><pre><code>// 例子 6-1
+
+for (const v of ['a', 'b', 'c']) {
+  console.log(v);
+}
+// a b c
+
+for (const [i, v] of ['a', 'b', 'c'].entries()) {
+  console.log(i, v);
+}
+// 0 &quot;a&quot;
+// 1 &quot;b&quot;
+// 2 &quot;c&quot;
+</code></pre></div><h6 id="_3-遍历-map"><a href="#_3-遍历-map" class="header-anchor">#</a> 3. 遍历 Map</h6> <div class="language- extra-class"><pre><code>// 例子 6-2
+
+let map = new Map(arr);
+
+// 遍历 key 值
+for (let key of map.keys()) {
+  console.log(key);
+}
+
+// 遍历 value 值
+for (let value of map.values()) {
+  console.log(value);
+}
+
+// 遍历 key 和 value 值(一)
+for (let item of map.entries()) {
+  console.log(item[0], item[1]);
+}
+
+// 遍历 key 和 value 值(二)
+for (let [key, value] of data) {
+  console.log(key)
+}
+</code></pre></div><h5 id="_7-promise"><a href="#_7-promise" class="header-anchor">#</a> 7. Promise</h5> <h6 id="_1-基本示例"><a href="#_1-基本示例" class="header-anchor">#</a> 1. 基本示例</h6> <div class="language- extra-class"><pre><code>// 例子 7-1
+
+// bad
+request(url, function(err, res, body) {
+    if (err) handleError(err);
+    fs.writeFile('1.txt', body, function(err) {
+        request(url2, function(err, res, body) {
+            if (err) handleError(err)
+        })
+    })
+});
+
+// good
+request(url)
+.then(function(result) {
+    return writeFileAsynv('1.txt', result)
+})
+.then(function(result) {
+    return request(url2)
+})
+.catch(function(e){
+    handleError(e)
+});
+</code></pre></div><h6 id="_2-finally"><a href="#_2-finally" class="header-anchor">#</a> 2. finally</h6> <div class="language- extra-class"><pre><code>// 例子 7-2
+
+fetch('file.json')
+.then(data =&gt; data.json())
+.catch(error =&gt; console.error(error))
+.finally(() =&gt; console.log('finished'));
+</code></pre></div><h5 id="_8-async"><a href="#_8-async" class="header-anchor">#</a> 8. Async</h5> <h6 id="_1-代码更加简洁"><a href="#_1-代码更加简洁" class="header-anchor">#</a> 1. 代码更加简洁</h6> <div class="language- extra-class"><pre><code>// 例子 8-1
+// good
+function fetch() {
+  return (
+    fetchData()
+    .then(() =&gt; {
+      return &quot;done&quot;
+    });
+  )
+}
+// better
+async function fetch() {
+  await fetchData()
+  return &quot;done&quot;
+};
+
+// 例子 8-2
+// good
+function fetch() {
+  return fetchData()
+  .then(data =&gt; {
+    if (data.moreData) {
+        return fetchAnotherData(data)
+        .then(moreData =&gt; {
+          return moreData
+        })
+    } else {
+      return data
+    }
+  });
+}
+// better
+async function fetch() {
+  const data = await fetchData()
+  if (data.moreData) {
+    const moreData = await fetchAnotherData(data);
+    return moreData
+  } else {
+    return data
+  }
+};
+
+// 例子 8-3
+// good
+function fetch() {
+  return (
+    fetchData()
+    .then(value1 =&gt; {
+      return fetchMoreData(value1)
+    })
+    .then(value2 =&gt; {
+      return fetchMoreData2(value2)
+    })
+  )
+}
+// better
+async function fetch() {
+  const value1 = await fetchData()
+  const value2 = await fetchMoreData(value1)
+  return fetchMoreData2(value2)
+};
+</code></pre></div><h6 id="_2-错误处理"><a href="#_2-错误处理" class="header-anchor">#</a> 2. 错误处理</h6> <div class="language- extra-class"><pre><code>// 例子 8-4
+
+// good
+function fetch() {
+  try {
+    fetchData()
+      .then(result =&gt; {
+        const data = JSON.parse(result)
+      })
+      .catch((err) =&gt; {
+        console.log(err)
+      })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// better
+async function fetch() {
+  try {
+    const data = JSON.parse(await fetchData())
+  } catch (err) {
+    console.log(err)
+  }
+};
+</code></pre></div><h6 id="_3-async-地狱"><a href="#_3-async-地狱" class="header-anchor">#</a> 3. &quot;async 地狱&quot;</h6> <div class="language- extra-class"><pre><code>// 例子 8-5
+// bad
+(async () =&gt; {
+  const getList = await getList();
+  const getAnotherList = await getAnotherList();
+})();
+// good
+(async () =&gt; {
+  const listPromise = getList();
+  const anotherListPromise = getAnotherList();
+  await listPromise;
+  await anotherListPromise;
+})();
+// good
+(async () =&gt; {
+  Promise.all([getList(), getAnotherList()]).then(...);
+})();
+</code></pre></div><h5 id="_9-class"><a href="#_9-class" class="header-anchor">#</a> 9. Class</h5> <h6 id="构造函数尽可能使用-class-的形式"><a href="#构造函数尽可能使用-class-的形式" class="header-anchor">#</a> 构造函数尽可能使用 Class 的形式</h6> <div class="language- extra-class"><pre><code>// 例子 9-1
+class Foo {
+  static bar () {
+    this.baz();
+  }
+  static baz () {
+    console.log('hello');
+  }
+  baz () {
+    console.log('world');
+  }
+}
+Foo.bar(); // hello
+</code></pre></div><p>// 例子 9-2
+class Shape {
+constructor(width, height) {
+this._width = width;
+this._height = height;
+}
+get area() {
+return this._width * this._height;
+}
+}
+const square = new Shape(10, 10);
+console.log(square.area);    // 100
+console.log(square._width);  // 10</p> <h5 id="_10-decorator"><a href="#_10-decorator" class="header-anchor">#</a> 10.Decorator</h5> <h6 id="_1-log"><a href="#_1-log" class="header-anchor">#</a> 1. log</h6> <div class="language- extra-class"><pre><code>// 例子 10-1
+
+class Math {
+  @log
+  add(a, b) {
+    return a + b;
+  }
+}
+log 的实现可以参考 《ES6 系列之我们来聊聊装饰器》
+</code></pre></div><h6 id="_2-autobind"><a href="#_2-autobind" class="header-anchor">#</a> 2. autobind</h6> <p>// 例子 10-2</p> <div class="language- extra-class"><pre><code>class Toggle extends React.Component {
+
+  @autobind
+  handleClick() {
+    console.log(this)
+  }
+
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        button
+      &lt;/button&gt;
+    );
+  }
+}
+
+autobind 的实现可以参考 《ES6 系列之我们来聊聊装饰器》
+
+###### 3. debounce
+
+// 例子 10-3
+
+class Toggle extends React.Component {
+
+  @debounce(500, true)
+  handleClick() {
+    console.log('toggle')
+  }
+
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        button
+      &lt;/button&gt;
+    );
+  }
+}
+
+debounce 的实现可以参考 《ES6 系列之我们来聊聊装饰器》
+</code></pre></div><h6 id="_4-react-与-redux"><a href="#_4-react-与-redux" class="header-anchor">#</a> 4. React 与 Redux</h6> <div class="language- extra-class"><pre><code>// 例子 10-4
+
+// good
+class MyReactComponent extends React.Component {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyReactComponent);
+
+// better
+@connect(mapStateToProps, mapDispatchToProps)
+export default class MyReactComponent extends React.Component {};
+
+##### 11. 函数
+###### 1. 默认值
+
+// 例子 11-1
+
+// bad
+function test(quantity) {
+  const q = quantity || 1;
+}
+
+// good
+function test(quantity = 1) {
+  ...
+}
+
+// 例子 11-2
+
+doSomething({ foo: 'Hello', bar: 'Hey!', baz: 42 });
+
+// bad
+function doSomething(config) {
+  const foo = config.foo !== undefined ? config.foo : 'Hi';
+  const bar = config.bar !== undefined ? config.bar : 'Yo!';
+  const baz = config.baz !== undefined ? config.baz : 13;
+}
+
+// good
+function doSomething({ foo = 'Hi', bar = 'Yo!', baz = 13 }) {
+  ...
+}
+
+// better
+function doSomething({ foo = 'Hi', bar = 'Yo!', baz = 13 } = {}) {
+  ...
+}
+
+// 例子 11-3
+
+// bad
+const Button = ({className}) =&gt; {
+  const classname = className || 'default-size';
+  return &lt;span className={classname}&gt;&lt;/span&gt;
+};
+
+// good
+const Button = ({className = 'default-size'}) =&gt; (
+  &lt;span className={classname}&gt;&lt;/span&gt;
+);
+
+// better
+const Button = ({className}) =&gt;
+  &lt;span className={className}&gt;&lt;/span&gt;
+}
+
+Button.defaultProps = {
+  className: 'default-size'
+}
+
+// 例子 11-4
+const required = () =&gt; {throw new Error('Missing parameter')};
+const add = (a = required(), b = required()) =&gt; a + b;
+add(1, 2) // 3
+add(1); // Error: Missing parameter.
+
+##### 12. 拓展运算符
+###### 1. arguments 转数组
+
+// 例子 12-1
+
+// bad
+function sortNumbers() {
+  return Array.prototype.slice.call(arguments).sort();
+}
+
+// good
+const sortNumbers = (...numbers) =&gt; numbers.sort();
+
+###### 2. 调用参数
+// 例子 12-2
+// bad
+Math.max.apply(null, [14, 3, 77])
+// good
+Math.max(...[14, 3, 77])
+// 等同于
+Math.max(14, 3, 77);
+
+##### 3. 构建对象
+
+剔除部分属性，将剩下的属性构建一个新的对象
+// 例子 12-3
+let [a, b, ...arr] = [1, 2, 3, 4, 5];
+const { a, b, ...others } = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+</code></pre></div><p>有条件的构建对象</p> <div class="language- extra-class"><pre><code>// 例子 12-4
+
+// bad
+function pick(data) {
+  const { id, name, age} = data
+
+  const res = { guid: id }
+
+  if (name) {
+    res.name = name
+  }
+  else if (age) {
+    res.age = age
+  }
+
+  return res
+}
+
+// good
+function pick({id, name, age}) {
+  return {
+    guid: id,
+    ...(name &amp;&amp; {name}),
+    ...(age &amp;&amp; {age})
+  }
+}
+</code></pre></div><p>合并对象</p> <div class="language- extra-class"><pre><code>// 例子 12-5
+
+let obj1 = { a: 1, b: 2,c: 3 }
+let obj2 = { b: 4, c: 5, d: 6}
+let merged = {...obj1, ...obj2};
+
+
+###### 4. React
+</code></pre></div><p>将对象全部传入组件</p> <div class="language- extra-class"><pre><code>// 例子 12-6
+const parmas =  {value1: 1, value2: 2, value3: 3}
+&lt;Test {...parmas} /&gt;
+
+##### 13. 双冒号运算符
+
+// 例子 13-1
+
+foo::bar;
+// 等同于
+bar.bind(foo);
+
+foo::bar(...arguments);
+// 等同于
+bar.apply(foo, arguments);
+</code></pre></div><p>如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p> <div class="language- extra-class"><pre><code>// 例子 13-2
+
+var method = obj::obj.foo;
+// 等同于
+var method = ::obj.foo;
+
+let log = ::console.log;
+// 等同于
+var log = console.log.bind(console);
+</code></pre></div><h5 id="_14-解构赋值"><a href="#_14-解构赋值" class="header-anchor">#</a> 14. 解构赋值</h5> <h6 id="_1-对象的基本解构"><a href="#_1-对象的基本解构" class="header-anchor">#</a> 1. 对象的基本解构</h6> <div class="language- extra-class"><pre><code>// 例子 14-1
+componentWillReceiveProps(newProps) {
+  this.setState({
+    active: newProps.active
+  })
+}
+componentWillReceiveProps({active}) {
+  this.setState({active})
+}
+
+// 例子 14-2
+// bad
+handleEvent = () =&gt; {
+  this.setState({
+    data: this.state.data.set(&quot;key&quot;, &quot;value&quot;)
+  })
+};
+// good
+handleEvent = () =&gt; {
+  this.setState(({data}) =&gt; ({
+    data: data.set(&quot;key&quot;, &quot;value&quot;)
+  }))
+};
+
+// 例子 14-3
+Promise.all([Promise.resolve(1), Promise.resolve(2)])
+.then(([x, y]) =&gt; {
+    console.log(x, y);
+});
+</code></pre></div><h5 id="_2-对象深度解构"><a href="#_2-对象深度解构" class="header-anchor">#</a> 2. 对象深度解构</h5> <div class="language- extra-class"><pre><code>// 例子 14-4
+
+// bad
+function test(fruit) {
+  if (fruit &amp;&amp; fruit.name)  {
+    console.log (fruit.name);
+  } else {
+    console.log('unknown');
+  }
+}
+
+// good
+function test({name} = {}) {
+  console.log (name || 'unknown');
+}
+
+// 例子 14-5
+
+let obj = {
+    a: {
+      b: {
+        c: 1
+      }
+    }
+};
+
+const {a: {b: {c = ''} = ''} = ''} = obj;
+</code></pre></div><h5 id="_3-数组解构"><a href="#_3-数组解构" class="header-anchor">#</a> 3. 数组解构</h5> <div class="language- extra-class"><pre><code>// 例子 14-6
+
+// bad
+const splitLocale = locale.split(&quot;-&quot;);
+const language = splitLocale[0];
+const country = splitLocale[1];
+
+// good
+const [language, country] = locale.split('-');
+</code></pre></div><h5 id="_4-变量重命名"><a href="#_4-变量重命名" class="header-anchor">#</a> 4. 变量重命名</h5> <div class="language- extra-class"><pre><code>// 例子 14-8
+
+let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
+console.log(baz); // &quot;aaa&quot;
+</code></pre></div><h5 id="_5-仅获取部分属性"><a href="#_5-仅获取部分属性" class="header-anchor">#</a> 5. 仅获取部分属性</h5> <div class="language- extra-class"><pre><code>// 例子 14-9
+
+function test(input) {
+  return [left, right, top, bottom];
+}
+const [left, __, top] = test(input);
+
+function test(input) {
+  return { left, right, top, bottom };
+}
+const { left, right } = test(input);
+</code></pre></div><h4 id="_15-增强的对象字面量"><a href="#_15-增强的对象字面量" class="header-anchor">#</a> 15. 增强的对象字面量</h4> <div class="language- extra-class"><pre><code>// 例子 15-1
+// bad
+const something = 'y'
+const x = {
+  something: something
+}
+// good
+const something = 'y'
+const x = {
+  something
+};
+</code></pre></div><p>动态属性</p> <p>// 例子 15-2
+const x = {
+['a' + '_' + 'b']: 'z'
+}
+console.log(x.a_b); // z</p> <h5 id="_16-数组的拓展方法"><a href="#_16-数组的拓展方法" class="header-anchor">#</a> 16. 数组的拓展方法</h5> <h6 id="_1-keys"><a href="#_1-keys" class="header-anchor">#</a> 1. keys</h6> <p>// 例子 16-1</p> <p>var arr = [&quot;a&quot;, , &quot;c&quot;];</p> <p>var sparseKeys = Object.keys(arr);
+console.log(sparseKeys); // ['0', '2']</p> <p>var denseKeys = [...arr.keys()];
+console.log(denseKeys);  // [0, 1, 2]</p> <h6 id="_2-entries"><a href="#_2-entries" class="header-anchor">#</a> 2. entries</h6> <p>// 例子 16-2</p> <p>var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+var iterator = arr.entries();</p> <p>for (let e of iterator) {
+console.log(e);
+}</p> <h6 id="_3-values"><a href="#_3-values" class="header-anchor">#</a> 3. values</h6> <p>// 例子 16-3</p> <p>let arr = ['w', 'y', 'k', 'o', 'p'];
+let eArr = arr.values();</p> <p>for (let letter of eArr) {
+console.log(letter);
+}</p> <h6 id="_4-includes"><a href="#_4-includes" class="header-anchor">#</a> 4. includes</h6> <div class="language- extra-class"><pre><code>// 例子 16-4
+
+// bad
+function test(fruit) {
+  if (fruit == 'apple' || fruit == 'strawberry') {
+    console.log('red');
+  }
+}
+
+// good
+function test(fruit) {
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+  if (redFruits.includes(fruit)) {
+    console.log('red');
+  }
+}
+</code></pre></div><h6 id="_5-find"><a href="#_5-find" class="header-anchor">#</a> 5. find</h6> <div class="language- extra-class"><pre><code>// 例子 16-5
+
+var inventory = [
+    {name: 'apples', quantity: 2},
+    {name: 'bananas', quantity: 0},
+    {name: 'cherries', quantity: 5}
+];
+
+function findCherries(fruit) {
+    return fruit.name === 'cherries';
+}
+
+console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
+</code></pre></div><h6 id="_6-findindex"><a href="#_6-findindex" class="header-anchor">#</a> 6. findIndex</h6> <div class="language- extra-class"><pre><code>// 例子 16-6
+
+function isPrime(element, index, array) {
+  var start = 2;
+  while (start &lt;= Math.sqrt(element)) {
+    if (element % start++ &lt; 1) {
+      return false;
+    }
+  }
+  return element &gt; 1;
+}
+
+console.log([4, 6, 8, 12].findIndex(isPrime)); // -1, not found
+console.log([4, 6, 7, 12].findIndex(isPrime)); // 2
+</code></pre></div><p>更多的就不列举了。</p> <h5 id="_17-optional-chaining"><a href="#_17-optional-chaining" class="header-anchor">#</a> 17. optional-chaining</h5> <p>举个例子：</p> <p>// 例子 17-1</p> <p>const obj = {
+foo: {
+bar: {
+baz: 42,
+},
+},
+};</p> <p>const baz = obj?.foo?.bar?.baz; // 42</p> <p>同样支持函数：</p> <div class="language- extra-class"><pre><code>// 例子 17-2
+
+function test() {
+  return 42;
+}
+test?.(); // 42
+
+exists?.(); // undefined
+</code></pre></div><p>需要添加 @babel/plugin-proposal-optional-chaining 插件支持</p> <h5 id="_18-logical-assignment-operators"><a href="#_18-logical-assignment-operators" class="header-anchor">#</a> 18. logical-assignment-operators</h5> <div class="language- extra-class"><pre><code>// 例子 18-1
+
+a ||= b;
+
+obj.a.b ||= c;
+
+a &amp;&amp;= b;
+
+obj.a.b &amp;&amp;= c;
+</code></pre></div><p>Babel 编译为：</p> <div class="language- extra-class"><pre><code>var _obj$a, _obj$a2;
+
+a || (a = b);
+
+(_obj$a = obj.a).b || (_obj$a.b = c);
+
+a &amp;&amp; (a = b);
+
+(_obj$a2 = obj.a).b &amp;&amp; (_obj$a2.b = c);
+</code></pre></div><p>出现的原因：</p> <div class="language- extra-class"><pre><code>// 例子 18-2
+
+function example(a = b) {
+  // a 必须是 undefined
+  if (!a) {
+    a = b;
+  }
+}
+
+function numeric(a = b) {
+  // a 必须是 null 或者 undefined
+  if (a == null) {
+    a = b;
+  }
+}
+
+// a 可以是任何 falsy 的值
+function example(a = b) {
+  // 可以，但是一定会触发 setter
+  a = a || b;
+
+  // 不会触发 setter，但可能会导致 lint error
+  a || (a = b);
+
+  // 就有人提出了这种写法：
+  a ||= b;
+}
+</code></pre></div><p>需要 @babel/plugin-proposal-logical-assignment-operators 插件支持</p> <h5 id="_19-nullish-coalescing-operator"><a href="#_19-nullish-coalescing-operator" class="header-anchor">#</a> 19. nullish-coalescing-operator</h5> <div class="language- extra-class"><pre><code>a ?? b
+
+// 相当于
+
+(a !== null &amp;&amp; a !== void 0) ? a : b
+
+举个例子：
+
+var foo = object.foo ?? &quot;default&quot;;
+
+// 相当于
+
+var foo = (object.foo != null) ? object.foo : &quot;default&quot;;
+</code></pre></div><p>需要 @babel/plugin-proposal-nullish-coalescing-operator 插件支持</p> <h5 id="_20-pipeline-operator"><a href="#_20-pipeline-operator" class="header-anchor">#</a> 20. pipeline-operator</h5> <div class="language- extra-class"><pre><code>const double = (n) =&gt; n * 2;
+const increment = (n) =&gt; n + 1;
+
+// 没有用管道操作符
+double(increment(double(5))); // 22
+
+// 用上管道操作符之后
+5 |&gt; double |&gt; increment |&gt; double; // 22</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.e08950d5.js" defer></script><script src="/assets/js/3.15c1e559.js" defer></script><script src="/assets/js/1.3bbf4713.js" defer></script><script src="/assets/js/28.3cdce673.js" defer></script>
+  </body>
+</html>
