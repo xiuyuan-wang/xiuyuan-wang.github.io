@@ -1,3 +1,4 @@
+
 module.exports = {
   "title": "倘若有一天",
   // "description": "blog",
@@ -46,11 +47,11 @@ module.exports = {
         "link": "/",
         "icon": "reco-blog"
       },
-      {
-        "text": "UI文档",
-        "link": "/vueUIDoc/",
-        "icon": "reco-api"
-      },
+      // {
+      //   "text": "组件",
+      //   "link": "/vueUIDoc/",
+      //   "icon": "reco-api"
+      // },
       // {
       //   "text": "日常积累",
       //   "link": "/days/",
@@ -62,7 +63,7 @@ module.exports = {
       //   "icon": "reco-api"
       // },
       {
-        "text": "TimeLine",
+        "text": "时间轴",
         "link": "/timeline/",
         "icon": "reco-date"
       },
@@ -91,46 +92,30 @@ module.exports = {
     "logo": "/header.jpg",
     "search": true,
     "searchMaxSuggestions": 10,
-    // "sidebar": "auto",
-    "sidebar": {
-      '/days/': [
-        {
-          title: '20170401',
-          path: '/20170401',
-          collapsable: true,
-          children: [{
-            title: '20170918',
-            path: '20170918',
-            collapsable: true,
-            children: ['20170521']
-          }]
-        },  
-      ],
+    // sidebar: require('./router'),
+    "sidebar":  {
+      '/days/': [],
       '/vueUIDoc/': [
         {
-          title: '20170401',
+          title: '短信验证码',
           collapsable: true,
+          path: 'validCode',
+        },
+        {
+          title: '组件',
+          collapsable: true,
+          path: 'validCode',
           children: [{
-            title: '20170918',
-            path: '20170918',
+            title: '短信验证码',
+            path: 'validCode',
             collapsable: true,
-            children: ['20170521']
+            children: [
+              ['/components/validCode', '短信验证码']
+            ]
           }]
         },  
       ],
-      '/knows/': [
-        // {
-        //   title: '20170401',
-        //   path: '20170401',
-        //   collapsable: true,
-        //   children: [{
-        //     title: '20170918',
-        //     path: '20170918',
-        //     collapsable: true,
-        //     children: ['20170521']
-        //   }]
-        // },  
-      ],
+      '/knows/': [],
     },
     "lastUpdated": "Last Updated",
     "author": "倘若有一天",
