@@ -2,7 +2,7 @@
 module.exports = {
   "title": "倘若有一天",
   // "description": "blog",
-  "dest": "public",
+  "dest": "dist",
   "head": [
     [
       "link",
@@ -19,7 +19,7 @@ module.exports = {
       }
     ]
   ],
-  "theme": "reco",
+  // "theme": "foo",
   "themeConfig": {
     // "huawei": true,
     "mode": "light",
@@ -29,22 +29,16 @@ module.exports = {
       "colorName2": 'yellow',
       "colorName3": 'blue'
     },
-    "friendLink": [
-      {
-        "title": "掘金",
-        "avatar": "https://mirror-gold-cdn.xitu.io/16cfbdbdfd582853a24?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1",
-        "link": "https://juejin.im/user/5d6f947051882537fb103bc1"
-      },
-      {
-        "title": "github",
-        "avatar": "https://mirror-gold-cdn.xitu.io/16cfbdbdfd582853a24?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1",
-        "link": "https://github.com/xiuyuan-wang"
-      }
-    ],
+    "friendLink": [],
     "nav": [
       {
         "text": "博客",
-        "link": "/",
+        "link": "/blog/",
+        "icon": "reco-blog"
+      },
+      {
+        "text": "技术总结",
+        "link": "/knows/",
         "icon": "reco-blog"
       },
       // {
@@ -52,36 +46,26 @@ module.exports = {
       //   "link": "/vueUIDoc/",
       //   "icon": "reco-api"
       // },
-      // {
-      //   "text": "日常积累",
-      //   "link": "/days/",
-      //   "icon": "reco-api"
-      // },
-      // {
-      //   "text": "基础知识",
-      //   "link": "/knows/",
-      //   "icon": "reco-api"
-      // },
       {
         "text": "数据可视化",
         "link": "/guide/",
         "icon": "reco-api"
       },
-      {
-        "text": "时间轴",
-        "link": "/timeline/",
-        "icon": "reco-date"
-      },
-      {
-        "text": "掘金",
-        "icon": "reco-juejin",
-        "link": "https://juejin.im/user/5d6f947051882537fb103bc1",
-      },
-      {
-        "text": "GitHub",
-        "icon": "reco-github",
-        "link": "https://github.com/xiuyuan-wang",
-      }
+      // {
+      //   "text": "时间轴",
+      //   "link": "/timeline/",
+      //   "icon": "reco-date"
+      // },
+      // {
+      //   "text": "掘金",
+      //   "icon": "reco-juejin",
+      //   "link": "https://juejin.im/user/5d6f947051882537fb103bc1",
+      // },
+      // {
+      //   "text": "",
+      //   "icon": "reco-github",
+      //   "link": "https://github.com/xiuyuan-wang",
+      // }
     ],
     "type": "blog",
     "blogConfig": {
@@ -97,99 +81,89 @@ module.exports = {
     "logo": "/header.jpg",
     "search": true,
     "searchMaxSuggestions": 10,
-    // sidebar: require('./router'),
-    "sidebar":  {
-      '/days/': [],
-      '/vueUIDoc/': [
-        {
-          title: '短信验证码',
-          collapsable: true,
-          path: 'validCode',
-        },
-        {
-          title: '组件',
-          collapsable: true,
-          path: 'validCode',
-          children: [{
-            title: '短信验证码',
-            path: 'validCode',
-            collapsable: true,
-            children: [
-              ['/components/validCode', '短信验证码']
-            ]
-          }]
-        },  
-      ],
-      '/knows/': [],
-      '/guide/': [
-        {
-          title: '指南',
-          collapsable: false,
-          children: [
-            ''
-          ]
-        },
-        {
-          title: '基础阶段',
-          collapsable: true,
-          children: [
-            'guide/scene',
-            'guide/tech',
-            'guide/canvas',
-            'guide/svg',
-            'guide/webgl',
-            'guide/zrender',
-            'guide/d3',
-            'guide/three',
-            'guide/highcharts',
-            'guide/antv',
-            'guide/echarts',
-            'guide/echarts-basic',
-            'guide/compare',
-            'guide/bmap',
-            'guide/bmap-harder',
-            'guide/bmap-datav',
-            'guide/bmap-webpack',
-            'guide/echarts-map',
-            'guide/amap',
-            'guide/amap-harder',
-            'guide/amap-datav',
-          ]
-        },
-        {
-          title: '数据报表项目',
-          collapsable: true,
-          children: [
-            'report/guide',
-            'report/qa',
-            'report/summary',
-          ]
-        },
-        {
-          title: '数据大屏项目',
-          collapsable: true,
-          children: [
-            'screen/vue3',
-          ]
-        },
-        {
-          title: '数据可视化组件库',
-          collapsable: true,
-          children: [
-            'libs/start',
-            'libs/svg',
-            'libs/svgAnimation'
-          ]
-        },
-        {
-          title: '移动报表项目',
-          collapsable: true,
-          children: [
-            'mobile/guide',
-          ]
-        }
-      ]
-    },
+    "subSidebar": "auto",
+    // "sidebar":  {
+    //   '/days/': [],
+    //   '/views/': [
+    //     {
+    //       title: '指南',
+    //       collapsable: false,
+    //       children: [
+    //         'react/guide'
+    //       ]
+    //     },
+    //   ],
+    //   '/knows/': [],
+    //   '/guide/': [
+    //     {
+    //       title: '指南',
+    //       collapsable: true,
+    //       children: [
+    //         ''
+    //       ]
+    //     },
+    //     {
+    //       title: '基础阶段',
+    //       collapsable: true,
+    //       children: [
+    //         'guide/scene',
+    //         'guide/tech',
+    //         'guide/canvas',
+    //         'guide/svg',
+    //         'guide/webgl',
+    //         'guide/zrender',
+    //         'guide/d3',
+    //         'guide/three',
+    //         'guide/highcharts',
+    //         'guide/antv',
+    //         'guide/echarts',
+    //         'guide/echarts-basic',
+    //         'guide/compare',
+    //         'guide/bmap',
+    //         'guide/bmap-harder',
+    //         'guide/bmap-datav',
+    //         'guide/bmap-webpack',
+    //         'guide/echarts-map',
+    //         'guide/amap',
+    //         'guide/amap-harder',
+    //         'guide/amap-datav',
+    //       ]
+    //     },
+    //     {
+    //       title: '数据报表项目',
+    //       collapsable: true,
+    //       children: [
+    //         'report/guide',
+    //         'report/qa',
+    //         'report/summary',
+    //       ]
+    //     },
+    //     {
+    //       title: '数据大屏项目',
+    //       collapsable: true,
+    //       children: [
+    //         'screen/vue3',
+    //       ]
+    //     },
+    //     {
+    //       title: '数据可视化组件库',
+    //       collapsable: true,
+    //       children: [
+    //         'libs/start',
+    //         'libs/svg',
+    //         'libs/svgAnimation'
+    //       ]
+    //     },
+    //     {
+    //       title: '移动报表项目',
+    //       collapsable: true,
+    //       children: [
+    //         'mobile/guide',
+    //       ]
+    //     }
+    //   ]
+    // },
+    "sidebar": require('./router'),
     "lastUpdated": "Last Updated",
     "author": "倘若有一天",
     "authorAvatar": "/header.jpg",
