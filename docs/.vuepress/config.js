@@ -22,6 +22,7 @@ module.exports = {
   // "theme": "foo",
   "themeConfig": {
     // "huawei": true,
+    "displayAllHeaders": false,
     "mode": "light",
     modePicker: false,
     "themePicker": {
@@ -31,13 +32,13 @@ module.exports = {
     },
     "friendLink": [],
     "nav": [
+      // {
+      //   "text": "博客",
+      //   "link": "/blog/",
+      //   "icon": "reco-blog"
+      // },
       {
-        "text": "博客",
-        "link": "/blog/",
-        "icon": "reco-blog"
-      },
-      {
-        "text": "技术总结",
+        "text": "前端",
         "link": "/knows/",
         "icon": "reco-blog"
       },

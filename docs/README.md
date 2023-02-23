@@ -18,13 +18,14 @@ bgImageStyle: {
 }
 # navbar: false
 isShowTitleInHome: false
-actionText: 开始 →
-actionLink: /knows/
+# actionText: 开始 →
+# actionLink: /knows/
 features:
 - title: FAQ - 求索
   details: 不断总结，不断前行，日拱一卒，功不唐捐，吾将上下而求索...
 - title: Follow - 追求
-  details: 自古英雄出炼狱，从来富贵入凡尘。醉生梦死谁成气，拓马长枪定乾坤。
+  details: 就让光芒折射泪水的瞳孔，映出心中最想拥有的彩虹.
 - title: Thought - 随笔
-  details: 携一壶老酒，从晨曦到晚霞。
+  details: 自古英雄出炼狱，从来富贵入凡尘。醉生梦死谁成气，拓马长枪定乾坤。
+footer: MIT Licensed | Copyright © qzgdbook.top
 ---
