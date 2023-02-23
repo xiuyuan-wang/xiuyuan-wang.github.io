@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IE6兼容性问题及解决办法汇总 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/14.9afc1667.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/13.81302ba4.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/19.3a5615bc.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/27.9ebc4263.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/31.58ba7ddf.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/34.25b5b82b.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>IE6兼容性问题及解决办法汇总
+</p> <p>1、IE6怪异解析之padding与border算入宽高 
+原因：未加文档声明造成非盒模型解析 
+解决方法：加入文档声明&lt;!doctype html&gt;</p> <p>2、IE6在块元素、左右浮动、设定marin时造成margin双倍（双边距） 
+解决方法：display:inline</p> <p>3、以下三种其实是同一种bug，其实也不算是个bug，举个例子：父标签高度20，子标签11，垂直居中，20-11=9，9要分给文字的上面与下面，怎么分？IE6就会与其它的不同，所以，尽量避免。 
+1）字体大小为奇数之边框高度少1px 
+解决方法：字体大小设置为偶数或line-height为偶数 
+2）line-height，文本垂直居中差1px 
+解决方法：padding-top代替line-height居中，或line-height加1或减1 
+3）与父标签的宽度的奇偶不同的居中造成1px的偏离 
+解决方法：如果父标签是奇数宽度，则子标签也用奇数宽度;如果是父标签偶数宽度，则子标签也用偶数宽度</p> <p>4、内部盒模型超出父级时，父级被撑大 
+解决方法：父标签使用overflow:hidden</p> <p>5、line-height默认行高bug 
+解决方法：line-height设值</p> <p>6、行标签之间会有一小段空白 
+解决方法：float或结构并排(可读性差，不建议)</p> <p>7、标签高度无法小于19px 
+解决方法：overflow: hidden;</p> <p>8、左浮元素margin-bottom失效 
+解决方法：显示设置高度 or 父标签设置_padding-bottom代替子标签的margin-bottom or 再放个标签让父标签浮动，子标签 
+margin- bottom，即(margin-bottom与float不同时作用于一个标签)</p> <p>9、img于块元素中，底边多出空白 
+解决方法：父级设置overflow: hidden; 或 img { display: block; } 或 _margin: -5px;</p> <p>10、li之间会有间距</p> <p>解决方法：float: left;</p> <p>11、块元素中有文字及右浮动的行元素，行元素换行 
+解决方法：将行元素置于块元素内的文字前</p> <p>12、position下的left，bottom错位 
+解决方法：为父级(relative层)设置宽高或添加*zoom:1</p> <p>13、子级中有设置position，则父级overflow失效 
+解决方法：为父级设置position:relative</p> <p>解决IE6兼容性问题的方法：</p> <p>1、终极方法：条件注释 
+  
+缺点是在IE浏览器下可能会增加额外的HTTP请求数。</p> <p>2、CSS选择器区分 
+IE6不支持子选择器；先针对IE6使用常规申明CSS选择器，然后再用子选择器针对IE7+及其他浏览器</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+/* IE6 专用 */   
+.content {color:red;}   
+/* 其他浏览器 */   
+div&gt;p .content {color:blue;}  
+&lt;/span&gt;  
+</code></pre></div><p>3、PNG半透明图片的问题 
+虽然可以通过JS等方式解决，但依然存在载入速度等问题，所以，这个在设计上能避免还是尽量避免为好。以达到网站最大优化。 
+4、IE6下的圆角 
+IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。</p> <p>5、IE6背景闪烁 
+如果你给链接、按钮用CSS sprites作为背景，你可能会发现在IE6下会有背景图闪烁的现象。造成这个的原因是由于IE6没有将背景图缓存，每次触发hover的时候都会重新加载，可以用JavaScript设置IE6缓存这些图片：</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+document.execCommand(&quot;BackgroundImageCache&quot;,false,true);   
+&lt;/span&gt;  
+</code></pre></div><p>6、最小高度 
+IE6 不支持min-height属性，但它却认为height就是最小高度。解决方法：使用ie6不支持但其余浏览器支持的属性!important。</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+#container {min-height:200px; height:auto !important; height:200px;}   
+&lt;/span&gt;  
+</code></pre></div><p>7、最大高度</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+//直接使用ID来改变元素的最大高度   
+var container = document.getElementById('container');   
+container.style.height = (container.scrollHeight &gt; 199) ? &quot;200px&quot; : &quot;auto&quot;;   
+//写成函数来运行   
+function setMaxHeight(elementId, height){   
+var container = document.getElementById(elementId);   
+container.style.height = (container.scrollHeight &gt; (height - 1)) ? height + &quot;px&quot; : &quot;auto&quot;;   
+}   
+//函数示例   
+setMaxHeight('container1', 200);   
+setMaxHeight('container2', 500);   
+&lt;/span&gt;  
+</code></pre></div><p>8、100% 高度 
+在IE6下，如果要给元素定义100%高度，必须要明确定义它的父级元素的高度，如果你需要给元素定义满屏的高度，就得先给html和body定义height:100%;。</p> <p>9、最小宽度 
+同max-height和max-width一样，IE6也不支持min-width。</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+//直接使用ID来改变元素的最小宽度   
+var container = document.getElementById('container');   
+container.style.width = (container.clientWidth &lt; width) ? &quot;500px&quot; : &quot;auto&quot;;   
+//写成函数来运行   
+function setMinWidth(elementId, width){   
+var container = document.getElementById(elementId);   
+container.style.width = (container.clientWidth &lt; width) ? width + &quot;px&quot; : &quot;auto&quot;;   
+}   
+//函数示例   
+setMinWidth('container1', 200);   
+setMinWidth('container2', 500);   
+&lt;/span&gt;  
+</code></pre></div><p>10、最大宽度</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+//直接使用ID来改变元素的最大宽度   
+var container = document.getElementById(elementId);   
+container.style.width = (container.clientWidth &gt; (width - 1)) ? width + &quot;px&quot; : &quot;auto&quot;;   
+//写成函数来运行   
+function setMaxWidth(elementId, width){   
+var container = document.getElementById(elementId);   
+container.style.width = (container.clientWidth &gt; (width - 1)) ? width + &quot;px&quot; : &quot;auto&quot;;   
+}   
+//函数示例   
+setMaxWidth('container1', 200);   
+setMaxWidth('container2', 500);   
+&lt;/span&gt; 
+ 
+</code></pre></div><p>11、双边距Bug 
+当元素浮动时，IE6会错误的把浮动方向的margin值双倍计算。个人觉得较好解决方法是避免float和margin同时使用。</p> <p>12、清除浮动 
+如果你想用div(或其他容器)包裹一个浮动的元素，你会发现必须给div(容器)定义明确的height、width、overflow之中一个属性（除了auto值）才能将浮动元素严实地包裹。</p> <div class="language- extra-class"><pre><code>&lt;span style=&quot;font-family:Microsoft YaHei;font-size:14px;&quot;&gt;   
+#container {border:1px solid #333; overflow:auto; height:100%;}   
+#floated1 {float:left; height:300px; width:200px; background:#00F;}   
+#floated2 {float:right; height:400px; width:200px; background:#F0F;}   
+更多：http://www.twinsenliang.net/skill/20090413.html   
+&lt;/span&gt;  
+</code></pre></div><p>13、浮动层错位 
+当内容超出外包容器定义的宽度时，在IE6中容器会忽视定义的width值，宽度会错误地随内容宽度增长而增长。 
+浮动层错位问题在IE6下没有真正让人满意的解决方法，虽然可以使用overflow:hidden;或overflow:scroll;来修正， 但hidden容易导致其他一些问题，scroll会破坏设计；JavaScript也没法很好地解决这个问题。所以建议是一定要在布局上避免这个问题发 生，使用一个固定的布局或者控制好内容的宽度（给内层加width）。</p> <p>14、躲猫猫bug 
+在IE6和IE7下，躲猫猫bug是一个非常恼人的问题。一个撑破了容器的浮动元素，如果在他之后有不浮动的内容，并且有一些定义了:hover的链接，当鼠标移到那些链接上时，在IE6下就会触发躲猫猫。 
+解决方法很简单： 
+1.在（那个未浮动的）内容之后添加一个<span style="clear:both;"></span> 
+2.触发包含了这些链接的容器的hasLayout，一个简单的方法就是给其定义height:1%;</p> <p>15、绝对定位元素的1像素间距bug 
+IE6下的这个错误是由于进位处理误差造成（IE7已修复），当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误。唯一的解决办法就是给父元素定义明确的高宽值，但对于液态布局没有完美的解决方法。</p> <p>16、3像素间距bug 
+在IE6中，当文本(或无浮动元素)跟在一个浮动的元素之后，文本和这个浮动元素之间会多出3像素的间隔。 
+给浮动层添加 display:inline 和 -3px 负值margin 
+给中间的内容层定义 margin-right 以纠正-3px</p> <p>17、IE下z-index的bug 
+在IE浏览器中，定位元素的z-index层级是相对于各自的父级容器，所以会导致z-index出现错误的表现。解决方法是给其父级元素定义z-index，有些情况下还需要定义position:relative。</p> <p>18、Overflow Bug 
+在IE6/7中，overflow无法正确的隐藏有相对定位position:relative;的子元素。解决方法就是给外包容器.wrap加上position:relative;。</p> <p>19、横向列表宽度bug 
+如果你使用float:left;把</p><li>横向摆列，并且</li><li>内包含的<a>（或其他）触发了 hasLayout，在IE6下就会有错误的表现。解决方法很简单，只需要给<a>定义同样的float:left;即可。<p></p> <p>20、列表阶梯bug 
+列表阶梯bug通常会在给</p><li>的子元素<a>使用float:left;时触发，我们本意是要做一个横向的列表(通常 是导航栏)，但IE却可能呈现出垂直的或者阶梯状。解决办法就是给<li>定义float:left;而非子元素<a>，或者 给<li>定义display:inline;也可以解决。<p></p> <p>21、垂直列表间隙bug 
+当我们使用</p></li><li> 包含一个块级子元素时，IE6(IE7也有可能)会错误地给每条列表元素（</li><li>）之间添加空隙。 
+解决方法：把<a>flaot并且清除float来解决这个问题；另外一个办法就是触发<a>的hasLayout（如定 义高宽、使用zoom:1;）；也可以给<li> 定义display:inline;来解决此问题；另外还有一个极有趣的方法，给包含的文本末尾添加一个空格。<p></p> <p>22、IE6中的:hover 
+在IE6中，除了(需要有href属性)才能触发:hover行为，这妨碍了我们实现许多鼠标触碰效果，但还是有一些法子是可以解决它的。最好是不要用:hover来实现重要的功能，仅仅只用它来强化效果。</p> <p>23、IE6调整窗口大小的 Bug 
+当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。</p> <p>24、文本重复Bug 
+在IE6中，一些隐藏的元素（如注释、display:none;的元素）被包含在一个浮动元素里，就有可能引发文本重复bug。解决办法：给浮动元素添加display:inline;。</p> <p>再补充：</p> <p>10要点解决IE6兼容性问题</p> <p>1、使用声明</p> <p>你必须经常在html网页头部放置一个声明，推荐使用严格的标准。例如</p> <div class="language- extra-class"><pre><code>&lt;!DOCTYPEHTMLPUBLIC“-//W3C//DTDHTML4.01//EN”   &quot;http://www.w3.org/TR/html4/strict.dtd”&gt; or,forXHTML:  &lt;!DOCTYPEhtmlPUBLIC“-//W3C//DTDXHTML1.0Strict//EN”   &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”&gt; 
+</code></pre></div><p>最后你需要是IE6进入兼容模式，这已经足够兼容了。</p> <p>2、使用position:relative</p> <p>IE6兼容性问题解决方案二：使用position:relative。设置一个标签position:relative可以解决很多问题，特别是曾经有过看不见的经历或者奇怪布局的框架。明显的，你需要小心，绝对位置放置的子元素是否都参照找到新位置。</p> <p>3、为浮动元素使用display:inline</p> <p>浮动元素会有一个著名的IE6双边距marginbug。假如你设置了左边距5px但实际上得到了10px左边距。display:inline可以解决这个问题，尽管它不是必需的，但是css仍然有效。</p> <p>4、设置元素启动hasLayout</p> <p>大部分IE6（IE7）的渲染问题都可以通过起来元素的hasLayout属性来兼容。这是IE内置的设定，确定一个内容块相对其它内容块是有界限和位置的。当你需要设置一个行内元素例如一个连接变成块状元素或者是透明效果，设置hasLayout也是必须的。</p> <p>5、修复重复字符的bug</p> <p>复杂的布局会触发一个bug：浮动对象的最后字符会出现在已经清除浮动的元素后面。这里有几种解决的办法，部分是理想的，并且一些测试和出错是必须的。
+a、确保浮动元素都使用：display:inline；
+b、最后一个浮动元素使用margin-right:-3px;
+c、在浮动对象最后一个元素后使用一个条件注释。例如&lt;!—&gt;这里输入注释…&lt;![endif]
+d、在容器内的最后使用一个div空标签（它也必须设置90%宽度甚至更小）</p> <p>6、使用a标签完成可点击和hover原理</p> <p>IE6只支持a标签的css定义hover效果
+你可以使用它去控制JavaScript启动的widgets，使得他们仍然保持键盘操作。这里有个二择一的问题，但是a标签是所有解决方案中最可靠的。</p> <p>7、使用!important，或是高级选择符替代IE特定代码</p> <p>IE6兼容性问题解决方案七;：使用!important。在外置的css文件里，放弃凭借传统的hacks和条件判断，使用有效的css代码去针对IE6仍然是有可能的。例如：最小高度可以使用一下定义。（在IE6中无法识别！important优先级别标签，所以一般用法为：{margin-top:20px !important; margin-top:0px;}）</p> <p>#element{  min-height:20em;  height:auto!important;  height:20em;  }</p> <p>9、早点和经常测试</p> <p>在你的网站和应用程序完成之前，不要放弃IE6的测试。问题将会更加严重并且需要很长时间去修复。如果你的网站可以运行于firefox和IE6，它将差不多肯定可以在其它浏览器下运行。</p> <p>10、重构你的代码</p> <p>IE6兼容性问题解决方案十：重构代码。经常的，修复会比重新考虑布局问题更加花费时间。Html细微的修改和更加简单的css经常是最有效的。这意味着你要放弃完美的合法的代码，但是将会更少的问题出现，并且你知道怎样处理将要出现的情况。</p> <p>#element[id]{  height:auto;  }</p> <p>注意事项</p> <p><em>margin-top:10px; 属性前加“</em>”,这个只有IE6/IE7才能识别。</p> <p>例如:</p> <p>div{    margin-top:10px; *margin-top:0px;}</p> <p>“*”或“+”或“_” + 属性，这个只有IE6和IE7才支持此种标签。</p> <p>*margin-top:10px \9; 属性值的后面加“\9”,这个只有IE才能识别。以上两种方法结合起来可以区分IE6、IE7、IE8+、非IE内核浏览器。</p></li></a></a></li></a></li></a></li></a></a></li></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/14.9afc1667.js" defer></script>
+  </body>
+</html>

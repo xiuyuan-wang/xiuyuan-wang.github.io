@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>image的加载事件(onload)和加载状态(complete) | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/13.81302ba4.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/14.9afc1667.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/19.3a5615bc.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/27.9ebc4263.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/31.58ba7ddf.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/34.25b5b82b.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>image的加载事件(onload)和加载状态(complete)
+</p> <p><img src="1.png" alt="github"></p> <p>之前做过这样一个需求，要让商家页的商家图片按照图片外面box的大小等比例缩放。之前的想法是在页面中先输出图片的src，然后在页面底部初始化js，然后在js中写相应的可以使图片按照box的大小等比例缩放的函数。要实现图片的等比例缩放要做到以下几点，</p> <p>第一，得到图片的width和height
+第二，比较图片的width和height与box的width的height的大小，共有四种情况，</p> <div class="language- extra-class"><pre><code># 如果图片的width和height均小于box的width和height，那么直接让图片上下左右居中即可，
+# 如果图片的width大于box的width，height小于box的height,让图片按照宽度等比例缩放，然后垂直居中，
+# 如果图片的height大于box的height,width小于box的width,让图片按照高度等比例缩放，然后左右居中，
+# 如果图片的width和height均大于box的width和height,那么分别计算图片的widht和height和box的width和height的比，用较小的值作为缩放的比例，然后上下左右居中即可。
+</code></pre></div><p>第三，将得到的图片放入对应的img节点中即可</p> <p>第二步和第三步都比较好实现，几个if..else循环即可搞定，但是对于第一步如何获得图片的width和height是个需要解决的关键性问题，之前的想法是在页面中直接输入图片的src，然后再将图片进行等比例缩小，但是这样存在了一个问题，就是无论如何，图片都会先展示出来原来的大小，然后再等比例缩小，这样在体验上非常不好，所以首先考虑到可以先让图片visiblility:hidden,然后在js计算完图片的大小的时候再让图片visibility:visible，这样虽然可以实现效果但是存在一定的限制，因为在页面的代码全部加载完毕后，图片不一定加载完毕，如果是一张较小的图片，那么这种方法可以很幸运的获得原始图片的高度和宽度，但是如果图片非常大，在图片还没有加载完毕，代码即运行结束，这样获得的图片的大小即不是真实的值，所以现在存在的一个问题就是如何在图片完全加载完毕之后再获得图片的真实的高度和宽度。我们这时自然而然的想到了img对象的onload方法，img.onload是当一张图片被加载完成后所触发的事件。下面看一个例子，</p> <div class="language- extra-class"><pre><code>&lt;input type=&quot;button&quot; name=&quot;&quot; value=&quot;载入图片&quot; onclick=&quot;addImg('tt.jpg')&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function addImg(isrc)
+    {
+        var Img = new Image();
+        Img.src = isrc;
+        Img.onload = function ()
+        {
+              document.body.appendChild(Img);
+        }
+    }
+&lt;/script&gt;
+</code></pre></div><p>当页面打开后，点击按钮后，会显示tt.jpg，但是如果重复点击会怎样呢？在IE中，除了第一次加载 图片时候显示正常，之后再点击就没有反应了，刷新也一样。FF中，每点击一次加载一张该图片。而这是什么原因呢？是因为在IE中只执行了一次onload或者是缓存的问题吗？先改写一下代码，</p> <div class="language- extra-class"><pre><code>&lt;input type=&quot;button&quot; name=&quot;&quot; value=&quot;载入图片&quot; onclick=&quot;addImg('tt.jpg')&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function addImg(isrc)
+    {
+        var Img = new Image();
+        Img.onload = function ()
+        {
+              document.body.appendChild(Img);
+        }
+        Img.src = isrc;
+    }
+&lt;/script&gt;
+</code></pre></div><p>现在再点击图片，就正常了，从此可见不是因为IE没有触发onload事件，而是因为IE中加载缓冲区的速度太快，以至于没有运行到img.onload的时候，图片已经被加载完毕了。因此，可以先告诉浏览器如何处理这张图片，然后再制定这张图片的来源。一般情况下，可以用complete来判断图片是否加载完毕。对于 complete 属性来讲，IE是根据图片是否显示过来判断，就是说当加载的图片显示出来后，complete 属性的值才为true ，否则一直是false ，和以前是否加载过该张图片没有关系，即和缓存没有关系！可以写如下的函数来做到各个浏览器中预加载图片的兼容性。</p> <div class="language- extra-class"><pre><code>var imgLoad = function (url) {
+    var img = new Image();
+    img.src = url;
+    if (img.complete) {
+        callback(img.width, img.height);
+    } else {
+        img.onload = function () {
+            callback(img.width, img.height);
+            img.onload = null;
+        };
+    };
+};</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/13.81302ba4.js" defer></script>
+  </body>
+</html>

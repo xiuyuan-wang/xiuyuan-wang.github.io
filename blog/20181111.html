@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES6 系列之迭代器与 for of | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/27.9ebc4263.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/13.81302ba4.js"><link rel="prefetch" href="/assets/js/14.9afc1667.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/19.3a5615bc.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/31.58ba7ddf.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/34.25b5b82b.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>ES6 系列之迭代器与 for of
+</p> <p>起源
+一段标准的 for 循环代码：</p> <p>var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</p> <p>for (var i = 0, len = colors.length; i &lt; len; i++) {
+console.log(colors[i]);
+}</p> <p>看着很简单，但是再回顾这段代码，实际上我们仅仅是需要数组中元素的值，但是却需要提前获取数组长度，声明索引变量等，尤其当多个循环嵌套的时候，更需要使用多个索引变量，代码的复杂度就会大大增加，比如我们使用双重循环进行去重：</p> <p>function unique(array) {
+var res = [];
+for (var i = 0, arrayLen = array.length; i &lt; arrayLen; i++) {
+for (var j = 0, resLen = res.length; j &lt; resLen; j++) {
+if (array[i] === res[j]) {
+break;
+}
+}
+if (j === resLen) {
+res.push(array[i]);
+}
+}
+return res;
+}</p> <p>为了消除这种复杂度以及减少循环中的错误(比如错误使用其他循环中的变量)，ES6 提供了迭代器和 for of 循环共同解决这个问题。</p> <h4 id="迭代器"><a href="#迭代器" class="header-anchor">#</a> 迭代器</h4> <p>所谓迭代器，其实就是一个具有 next() 方法的对象，每次调用 next() 都会返回一个结果对象，该结果对象有两个属性，value 表示当前的值，done 表示遍历是否结束。</p> <p>我们直接用 ES5 的语法创建一个迭代器：</p> <p>function createIterator(items) {
+var i = 0;
+return {
+next: function() {
+var done = i &gt;= item.length;
+var value = !done ? items[i++] : undefined;</p> <div class="language- extra-class"><pre><code>          return {
+              done: done,
+              value: value
+          };
+      }
+  };
+</code></pre></div><p>}</p> <p>// iterator 就是一个迭代器对象
+var iterator = createIterator([1, 2, 3]);</p> <p>console.log(iterator.next()); // { done: false, value: 1 }
+console.log(iterator.next()); // { done: false, value: 2 }
+console.log(iterator.next()); // { done: false, value: 3 }
+console.log(iterator.next()); // { done: true, value: undefined }</p> <h4 id="for-of"><a href="#for-of" class="header-anchor">#</a> for of</h4> <p>除了迭代器之外，我们还需要一个可以遍历迭代器对象的方式，ES6 提供了 for of 语句，我们直接用 for of 遍历一下我们上节生成的遍历器对象试试：</p> <p>var iterator = createIterator([1, 2, 3]);</p> <p>for (let value of iterator) {
+console.log(value);
+}</p> <p>结果报错 TypeError: iterator is not iterable，表明我们生成的 iterator 对象并不是 iterable(可遍历的)。</p> <p>那什么才是可遍历的呢？</p> <p>其实一种数据结构只要部署了 Iterator 接口，我们就称这种数据结构是“可遍历的”（iterable）。</p> <p>ES6 规定，默认的 Iterator 接口部署在数据结构的 Symbol.iterator 属性，或者说，一个数据结构只要具有 Symbol.iterator 属性，就可以认为是&quot;可遍历的&quot;（iterable）。</p> <p>举个例子：</p> <p>const obj = {
+value: 1
+};</p> <p>for (value of obj) {
+console.log(value);
+}</p> <p>// TypeError: iterator is not iterable
+我们直接 for of 遍历一个对象，会报错，然而如果我们给该对象添加 Symbol.iterator 属性：</p> <p>const obj = {
+value: 1
+};</p> <p>obj[Symbol.iterator] = function() {
+return createIterator([1, 2, 3]);
+};</p> <p>for (value of obj) {
+console.log(value);
+}</p> <p>// 1
+// 2
+// 3</p> <p>由此，我们也可以发现 for of 遍历的其实是对象的 Symbol.iterator 属性。</p> <p>默认可遍历对象
+然而如果我们直接遍历一个数组对象：</p> <p>const colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</p> <p>for (let color of colors) {
+console.log(color);
+}</p> <p>// red
+// green
+// blue</p> <p>尽管我们没有手动添加 Symbol.iterator 属性，还是可以遍历成功，这是因为 ES6 默认部署了 Symbol.iterator 属性，当然我们也可以手动修改这个属性：</p> <p>var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</p> <p>colors[Symbol.iterator] = function() {
+return createIterator([1, 2, 3]);
+};</p> <p>for (let color of colors) {
+console.log(color);
+}</p> <p>// 1
+// 2
+// 3</p> <p>除了数组之外，还有一些数据结构默认部署了 Symbol.iterator 属性。</p> <p>所以 for...of 循环可以使用的范围包括：</p> <p>数组
+Set
+Map
+类数组对象，如 arguments 对象、DOM NodeList 对象
+Generator 对象
+字符串</p> <h4 id="模拟实现-for-of"><a href="#模拟实现-for-of" class="header-anchor">#</a> 模拟实现 for of</h4> <p>其实模拟实现 for of 也比较简单，基本就是通过 Symbol.iterator 属性获取迭代器对象，然后使用 while 遍历一下：</p> <p>function forOf(obj, cb) {
+let iterable, result;</p> <div class="language- extra-class"><pre><code>  if (typeof obj[Symbol.iterator] !== &quot;function&quot;)
+      throw new TypeError(result + &quot; is not iterable&quot;);
+  if (typeof cb !== &quot;function&quot;) throw new TypeError(&quot;cb must be callable&quot;);
+
+  iterable = obj[Symbol.iterator]();
+
+  result = iterable.next();
+  while (!result.done) {
+      cb(result.value);
+      result = iterable.next();
+  }
+</code></pre></div><p>}</p> <p>#####　内建迭代器</p> <p>为了更好的访问对象中的内容，比如有的时候我们仅需要数组中的值，但有的时候不仅需要使用值还需要使用索引，ES6 为数组、Map、Set 集合内建了以下三种迭代器：</p> <p>entries() 返回一个遍历器对象，用来遍历[键名, 键值]组成的数组。对于数组，键名就是索引值。
+keys() 返回一个遍历器对象，用来遍历所有的键名。
+values() 返回一个遍历器对象，用来遍历所有的键值。</p> <p>以数组为例：</p> <p>var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</p> <p>for (let index of colors.keys()) {
+console.log(index);
+}</p> <p>// 0
+// 1
+// 2</p> <p>for (let color of colors.values()) {
+console.log(color);
+}</p> <p>// red
+// green
+// blue</p> <p>for (let item of colors.entries()) {
+console.log(item);
+}</p> <p>// [ 0, &quot;red&quot; ]
+// [ 1, &quot;green&quot; ]
+// [ 2, &quot;blue&quot; ]</p> <p>Map 类型与数组类似，但是对于 Set 类型需要注意以下：</p> <p>var colors = new Set([&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]);</p> <p>for (let index of colors.keys()) {
+console.log(index);
+}</p> <p>// red
+// green
+// blue</p> <p>for (let color of colors.values()) {
+console.log(color);
+}</p> <p>// red
+// green
+// blue</p> <p>for (let item of colors.entries()) {
+console.log(item);
+}</p> <p>// [ &quot;red&quot;, &quot;red&quot; ]
+// [ &quot;green&quot;, &quot;green&quot; ]
+// [ &quot;blue&quot;, &quot;blue&quot; ]</p> <p>Set 类型的 keys() 和 values() 返回的是相同的迭代器，这也意味着在 Set 这种数据结构中键名与键值相同。</p> <p>而且每个集合类型都有一个默认的迭代器，在 for-of 循环中，如果没有显式指定则使用默认的迭代器。数组和 Set 集合的默认迭代器是 values() 方法，Map 集合的默认迭代器是 entries() 方法。</p> <p>这也就是为什么直接 for of 遍历 Set 和 Map 数据结构，会有不同的数据结构返回：</p> <p>const values = new Set([1, 2, 3]);</p> <p>for (let value of values) {
+console.log(value);
+}</p> <p>// 1
+// 2
+// 3</p> <p>const values = new Map([[&quot;key1&quot;, &quot;value1&quot;], [&quot;key2&quot;, &quot;value2&quot;]]);
+for (let value of values) {
+console.log(value);
+}</p> <p>// [&quot;key1&quot;, &quot;value1&quot;]
+// [&quot;key2&quot;, &quot;value2&quot;]</p> <p>遍历 Map 数据结构的时候可以顺便结合解构赋值：</p> <p>const valuess = new Map([[&quot;key1&quot;, &quot;value1&quot;], [&quot;key2&quot;, &quot;value2&quot;]]);</p> <p>for (let [key, value] of valuess) {
+console.log(key + &quot;:&quot; + value);
+}</p> <p>// key1:value1
+// key2:value2</p> <p>Babel 是如何编译 for of 的
+我们可以在 Babel 的 Try it out 中查看编译的结果：</p> <p>const colors = new Set([&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]);</p> <p>for (let color of colors) {
+console.log(color);
+}</p> <p>对于这样一段代码，编译的结果如下：</p> <p>&quot;use strict&quot;;</p> <p>var colors = new Set([&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]);</p> <p>var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;</p> <p>try {
+for (
+var _iterator = colors<a href="">Symbol.iterator</a>, _step;
+!(_iteratorNormalCompletion = (_step = _iterator.next()).done);
+_iteratorNormalCompletion = true
+) {
+var color = _step.value;</p> <div class="language- extra-class"><pre><code>      console.log(color);
+  }
+</code></pre></div><p>} catch (err) {
+_didIteratorError = true;
+_iteratorError = err;
+} finally {
+try {
+if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
+_iterator.return();
+}
+} finally {
+if (_didIteratorError) {
+throw _iteratorError;
+}
+}
+}</p> <p>至少由编译的结果可以看出，使用 for of 循环的背后，还是会使用 Symbol.iterator 接口。</p> <p>而这段编译的代码稍微复杂的地方有两段，一段是 for 循环这里：</p> <p>for (
+var _iterator = colors<a href="">Symbol.iterator</a>, _step;
+!(_iteratorNormalCompletion = (_step = _iterator.next()).done);
+_iteratorNormalCompletion = true
+) {
+var color = _step.value;
+console.log(color);
+}</p> <p>跟标准的 for 循环写法有些差别，我们看下 for 语句的语法：</p> <p>for (initialize; test; increment) statement;
+initialize、test 和 increment 三个表达式之间用分号分割，它们分别负责初始化操作、循环条件判断和计数器变量的更新。</p> <p>for 语句其实就相当于：</p> <p>initialize;
+while (test) {
+statement;
+increment;
+}</p> <p>代码的逻辑为：先进行初始化，然后每次循环执行之前会执行 test 表达式，并判断表达式的结果来决定是否执行循环体，如果 test 计算结果为真值，则执行循环体中的 statement。最后，执行 increment 表达式。</p> <p>而且值得注意的是，其实 for 循环中的三个表达式中任意一个都可以被忽略，不过分号还是要写的。</p> <p>比如 for(;😉，不过这就是一个死循环……</p> <p>比如：</p> <p>var i = 0,
+len = colors.length;
+for (; i &lt; len; i++) {
+console.log(colors[i]);
+}</p> <p>又比如：</p> <p>var i = 0,
+len = colors.length;
+for (; i &lt; len; ) {
+i++;
+}</p> <p>然后我们再来看 Babel 编译的这个 for 循环表达式：</p> <p>for (
+var _iterator = colors<a href="">Symbol.iterator</a>, _step;
+!(_iteratorNormalCompletion = (_step = _iterator.next()).done);
+_iteratorNormalCompletion = true
+) {
+var color = _step.value;
+console.log(color);
+}</p> <p>用 while 的写法相当于：</p> <p>var _iterator = colors<a href="">Symbol.iterator</a>,
+_step;
+while (!(_iteratorNormalCompletion = (_step = _iterator.next()).done)) {
+var color = _step.value;
+console.log(color);
+_iteratorNormalCompletion = true;
+}</p> <p>是不是就好懂了很多呢，然后你就会发现，其实 _iteratorNormalCompletion = true 这句是完全没有必要的……</p> <p>另外一段稍微复杂的代码是:</p> <p>try {
+...
+} catch (err) {
+...
+} finally {
+try {
+if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
+_iterator.return();
+}
+} finally {
+...
+}
+}</p> <p>因为 _iteratorNormalCompletion = (_step = _iterator.next()).done，所以 _iteratorNormalCompletion 表示的就是是否完成了一次完整的迭代过程，如果没有正常的迭代完成，并且迭代器有 return 方法时，就会执行该方法。</p> <p>而之所以这么做，就要提到迭代器的 return 方法。</p> <p>引用阮一峰老师的 ECMAScript 6 入门:</p> <p>遍历器对象除了具有 next 方法，还可以具有 return 方法和 throw 方法。如果你自己写遍历器对象生成函数，那么 next 方法是必须部署的，return 方法和 throw 方法是否部署是可选的。</p> <p>return 方法的使用场合是，如果 for...of 循环提前退出（通常是因为出错，或者有 break 语句或 continue 语句），就会调用 return 方法。如果一个对象在完成遍历前，需要清理或释放资源，就可以部署 return 方法。</p> <p>我们可以举个例子：</p> <p>function createIterator(items) {
+var i = 0;
+return {
+next: function() {
+var done = i &gt;= items.length;
+var value = !done ? items[i++] : undefined;</p> <div class="language- extra-class"><pre><code>          return {
+              done: done,
+              value: value
+          };
+      },
+      return: function() {
+          console.log(&quot;执行了 return 方法&quot;);
+          return {
+              value: 23333,
+              done: true
+          };
+      }
+  };
+</code></pre></div><p>}</p> <p>var colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];</p> <p>var iterator = createIterator([1, 2, 3]);</p> <p>colors[Symbol.iterator] = function() {
+return iterator;
+};</p> <p>for (let color of colors) {
+if (color == 1) break;
+console.log(color);
+}</p> <p>// 执行了 return 方法
+不过正如你在编译后的代码中看到，仅仅是在有 return 函数的时候执行了 return 函数而已，return 函数中返回的值其实并不生效……</p> <p>但是你不返回值或者返回一个基本类型的值的话，结果又会报错……</p> <p>TypeError: Iterator result undefined is not an object
+这是因为 return 方法必须返回一个对象，而这又是 Generator 规范决定的……</p> <p>总之如果是在浏览器中使用的话，return 函数的返回值其实并不生效</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/27.9ebc4263.js" defer></script>
+  </body>
+</html>

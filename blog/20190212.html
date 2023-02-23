@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js处理的8种跨域方法 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/34.25b5b82b.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/13.81302ba4.js"><link rel="prefetch" href="/assets/js/14.9afc1667.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/19.3a5615bc.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/27.9ebc4263.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/31.58ba7ddf.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>js处理的8种跨域方法
+</p> <p>这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p> <p>特别注意两点：</p> <p>#1、如果是协议和端口造成的跨域问题“前台”是无能为力的；
+#2、在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。
+要解决跨域的问题，我们可以使用以下几种方法：</p> <h5 id="方法一、通过jsonp跨域"><a href="#方法一、通过jsonp跨域" class="header-anchor">#</a> 方法一、通过jsonp跨域</h5> <p>JSONP包含两部分：回调函数和数据。
+回调函数：当响应到来时要放在当前页面被调用的函数。
+数据：就是传入回调函数中的json数据，也就是回调函数的参数了。</p> <div class="language- extra-class"><pre><code>    /*handleResonse({&quot;data&quot;: &quot;zhe&quot;})*/
+    //原理如下：
+    //当我们通过script标签请求时
+    //后台就会根据相应的参数(json,handleResponse)
+    //来生成相应的json数据(handleResponse({&quot;data&quot;: &quot;zhe&quot;}))
+    //最后这个返回的json数据(代码)就会被放在当前js文件中被执行
+    //至此跨域通信完成
+    //1、使用JS动态生成script标签，进行跨域操作
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+    var script = document.createElement('script');
+    script.src = 'http://www.example.com/data/?callback=handleResponse';
+    document.body.insertBefore(script, document.body.firstChild);
+    --------------------------
+    //2、手动生成script标签
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+    &lt;script src=&quot;http://www.example.com/data/?callback=handleResponse&quot;&gt;&lt;/script&gt;
+    --------------------------
+    //3、使用jQuery进行jsonp操作
+    //jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁
+    //$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
+    &lt;script&gt;
+        $.getJson('http://www.example.com/data/?callback=?',function(jsondata){
+        //处理获得的Json数据
+    });
+    &lt;/script&gt;
+</code></pre></div><p>jsonp虽然很简单，但是有如下缺点：</p> <p>#1）安全问题(请求代码中可能存在安全隐患)</p> <p>#2）要确定jsonp请求是否失败并不容易</p> <h5 id="方法二、通过document-domain-iframe来跨子域-只有在主域相同的时候才能使用该方法"><a href="#方法二、通过document-domain-iframe来跨子域-只有在主域相同的时候才能使用该方法" class="header-anchor">#</a> 方法二、通过document.domain+iframe来跨子域(只有在主域相同的时候才能使用该方法)</h5> <p>#（1）不能通过ajax的方法去请求不同源中的文档。
+#（2）浏览器中不同域的框架之间是不能进行js的交互操作的。</p> <p>所以，在不同的框架之间（父子或同辈），是能够获取到彼此的window对象的，但不能使用获取到的window对象的属性和方法(html5中的postMessage方法是一个例外)，总之，你可以当做是只能获取到一个几乎无用的window对象。</p> <p>例如，在一个页面 http:// www.example.com/a.html 中，有一个iframe框架它的src是http:// example.com/b.html, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的：</p> <div class="language- extra-class"><pre><code>    //  http://www.example.com/a.html 页面中
+     &lt;script&gt;
+     function onLoad(){
+         var iframe = document.getElementById('iframe');
+         var win = iframe.contentWindow;
+         //这里能够获取到iframe中的window对象，但是window对象的属性和方法几乎不可用。
+         var doc = win.document;//这里获取不到iframe中的document对象
+         var name = win.name;//这里获取不到window对象的name属性
+         ······
+     }
+     &lt;iframe id = &quot;iframe&quot; src =&quot;http:// example.com/b.html&quot; onload = &quot;onLoad()&quot;&gt;&lt;/iframe&gt; 
+</code></pre></div><p>所以我们就要用到document.domain</p> <ol><li><p>在页面http:// www.a.com/dir/a.html中设置document.domain：</p> <div class="language- extra-class"><pre><code> 1 &lt;iframe src = &quot;http://script.a.com/dir/b.html&quot; id=&quot;iframe&quot; onload = &quot;loLoad()&quot;&gt;&lt;/iframe&gt;
+ 2 &lt;script&gt;
+ 3 document.domain = &quot;a.com&quot;;//设置成主域
+ 4 function test(){
+ 5     var iframe = document.getElementById(&quot;iframe&quot;);
+ 6     var win = iframe.contentWindow;
+ 7     //在这里就可以操作b.html
+ 8 }
+ 9 &lt;/script&gt;
+</code></pre></div></li> <li><p>在http:// script.a.com/dir/b.html也需要显示的设置document.domain</p> <div class="language- extra-class"><pre><code> &lt;script&gt;
+      document.domain = &quot;a.com&quot;;
+ &lt;/script&gt;
+</code></pre></div></li></ol> <p>注意，document.domain的设置是有限制的：</p> <p>我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。
+　　例如：a.b.c.com 中某个文档的document.domain 可以设成a.b.c.com、b.c.com 、c.com中的任意一个</p> <h5 id="方法三、使用window-name-iframe来进行跨域"><a href="#方法三、使用window-name-iframe来进行跨域" class="header-anchor">#</a> 方法三、使用window.name+iframe来进行跨域</h5> <p>window的name属性特征：name 值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB），即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面window.name都有读写的权限。</p> <p>正是由于window的name属性的特征，所以可以使用window.name来进行跨域。
+　　举例：
+　　1）在一个a.html页面中，有如下代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        window.name = &quot;哈哈，我是页面a设置的值哟！&quot;;
+        //设置window.name的值
+        setTimeout(function(){
+            window.location = 'b.html';
+        },3000);//3秒后把一个新页面载入当前window
+    &lt;/script&gt;
+</code></pre></div><p>2）再在b.html中读取window.name的值：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        alert(window.name);//读取window.name的值
+    &lt;/script&gt;
+</code></pre></div><p>3）a.html载入3秒后，跳转到b.html页面中，结果为  弹出框&quot;哈哈，我是页面a设置的值哟！&quot;</p> <p>#注意：
+#1.window.name的值只能是字符串的形式，这个字符串的大小最大能允许2M左右甚至更大的一个容量，具体取决于不同的浏览器。</p> <p>接下来使用window.name进行跨域举例</p> <p>比如：有一个example.com/a.html页面,需要通过a.html页面里的js来获取另一个位于不同域上的页面cnblogs.com/data.html里的数据。</p> <p>1)创建cnblogs.com/data.html代码：
+<script>
+window.name = &amp;quot;我是data.html的数据，所有可以转化为字符串来传递的数据都可以在这里使用，比如这里可以传递Json数据&amp;quot;;
+</script></p> <p>2)创建example.com/a.html的代码：
+想要即使a.html页面不跳转也能得到data.html里的数据。在a.html页面中使用一个隐藏的iframe来充当一个中间人角色，由iframe去获取data.html的数据，然后a.html再去得到iframe获取到的数据。</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+        function getData(){
+        //iframe载入data.html页面会执行此函数
+            var ifr = document.getElementById(&quot;iframe&quot;);
+            ifr.onload = function(){
+            //这个时候iframe和a.html已经处于同一源，可以互相访问
+                var data = ifr.contentWindow.name;
+    //获取iframe中的window.name，也就是data.html中给它设置的数据
+                alert(data);
+            }
+            ifr.src = 'b.html';//这里的b.html为随便一个页面，只要与a.html同源就行，目的是让a.html能够访问到iframe中的东西，否则访问不到
+        }
+    &lt;/script&gt;
+    &lt;iframe id = &quot;iframe&quot; src = &quot;cnblogs.com/data.html&quot; style = &quot;display:none&quot; onload = &quot;getData()&quot;&gt;&lt;/iframe&gt;
+</code></pre></div><h5 id="方法四、使用window-postmessage方法来跨域-不常用"><a href="#方法四、使用window-postmessage方法来跨域-不常用" class="header-anchor">#</a> 方法四、使用window.postMessage方法来跨域(不常用)</h5> <p>window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源(可实现跨域)，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。
+　　message：为要发送的消息，类型只能为字符串；
+　　targetOrigin：用来限定接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 “*”。</p> <p>1)创建www.test.com/a.html页面代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    function onLoad(){
+        var iframe = document.getElementById(&quot;iframe&quot;);
+        var win = iframe.contentWindow;
+        win.postMessage('哈哈，我是来自页面a.html的信息哟！','*');//向不同域的www.script.com/b.html发送消息
+    }
+    &lt;/script&gt;
+    &lt;iframe id=&quot;iframe&quot; src=&quot;www.script.com/b.html&quot; onload=&quot;onLoad()&quot;&gt;&lt;/iframe&gt;
+</code></pre></div><p>2)创建www.script.com/b.html页面代码：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    window.onmessage = function(e){//注册message时间来接收消息
+        e = e || event;            //获取时间对象
+        alert(e.data);             //通过data属性来得到传送的消息
+    }
+    &lt;/script&gt;
+</code></pre></div><p>优点：使用postMessage来跨域传送数据还是比较直观和方便的；
+缺点： IE6、IE7不支持，所以用不用还得根据实际需要来决定。</p> <h5 id="方法五、使用跨域资源共享-cors-来跨域"><a href="#方法五、使用跨域资源共享-cors-来跨域" class="header-anchor">#</a> 方法五、使用跨域资源共享（CORS）来跨域</h5> <p>CORS：一种跨域访问的机制，可以让AJAX实现跨域访问；CORS允许一个域上的网络应用向另一个域提交跨域AJAX请求。
+服务器设置Access-Control-Allow-Origin HTTP响应头之后，浏览器将会允许跨域请求．
+就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p> <ol><li><p>IE中对CORS的实现是通过xdr</p> <div class="language- extra-class"><pre><code> var xdr = new XDomainRequest();
+ xdr.onload = function(){
+     console.log(xdr.responseText);
+ }
+ xdr.open('get', 'http://www.test.com');
+ ......
+ xdr.send(null);
+</code></pre></div></li> <li><p>其它浏览器中的实现就在xhr中</p> <div class="language- extra-class"><pre><code> var xhr =  new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+ if(xhr.readyState === 4 &amp;&amp; xhr.status === 200){
+         console.log(xhr.responseText);
+         } 
+     }
+ }
+ xhr.open('get', 'http://www.test.com');
+ ......
+ xhr.send(null);
+</code></pre></div></li> <li><p>实现跨浏览器的CORS</p> <div class="language- extra-class"><pre><code> function createCORS(method, url){
+     var xhr = new XMLHttpRequest();
+     if('withCredentials' in xhr){
+         xhr.open(method, url, true);
+     }else if(typeof XDomainRequest != 'undefined'){
+         var xhr = new XDomainRequest();
+         xhr.open(method, url);
+     }else{
+         xhr = null;
+     }
+     return xhr;
+ }
+ var request = createCORS('get', 'http://www.test.com');
+ if(request){
+     request.onload = function(){
+         ......
+     };
+     request.send();
+ }
+</code></pre></div></li></ol> <h5 id="方法六、使用location-hash-iframe来跨域-不常用"><a href="#方法六、使用location-hash-iframe来跨域-不常用" class="header-anchor">#</a> 方法六、使用location.hash+iframe来跨域（不常用）</h5> <p>假设域名test.com下的文件a.html要和csdnblogs.com域名下的b.html传递信息。
+　　1) 创建test.com下的a.html页面， 同时在a.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一旦有变化则获取获取hash值，代码如下：</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    function startRequest(){
+        var ifr = document.createElement('iframe');
+        //创建一个隐藏的iframe
+        ifr.style.display = 'none';
+        ifr.src = 'http://www.csdnblogs.com/b.html#paramdo';
+        //传递的location.hash 
+        document.body.appendChild(ifr);
+    }
+
+    function checkHash() {
+        try {
+            var data = location.hash ? location.hash.substring(1):'';
+            if (console.log) {
+                console.log('Now the data is ' + data);
+            }
+        } catch (e) {};
+    }
+    setInterval(checkHash, 5000);
+    window.onload = startRequest;
+    &lt;/script&gt;
+</code></pre></div><ol start="2"><li><p>b.html响应请求后再将通过修改a.html的hash值来传递数据，代码如下：</p> <div class="language- extra-class"><pre><code>&lt;script&gt;
+function checkHash() {
+    var data = '';
+    //模拟一个简单的参数处理操作
+    switch (location.hash) {
+        case '#paramdo':
+            data = 'somedata';
+            break;
+        case '#paramset':
+            //do something……
+            break;
+        default:
+            break;
+    }
+    data &amp;&amp; callBack('#' + data);
+}
+
+function callBack(hash) {
+    // ie、chrome的安全机制无法修改parent.location.hash
+    //所以要利用一个中间的www.csdnblogs.com域下的代理iframe
+    var proxy = document.createElement('iframe');
+    proxy.style.display = 'none';
+    proxy.src = 'http://www.csdnblogs.com/c.html' + hash; 
+    // 注意该文件在&quot;www.csdnblogs.com&quot;域下
+    document.body.appendChild(proxy);
+}
+window.onload = checkHash;
+&lt;/script&gt;
+</code></pre></div></li> <li><p>test.com域下的c.html代码：</p> <div class="language- extra-class"><pre><code> &lt;script&gt;
+  //因为parent.parent和自身属于同一个域，所以可以改变其location.hash的值
+ parent.parent.location.hash = self.location.hash.substring(1);
+ &lt;/script&gt;
+</code></pre></div></li></ol> <h5 id="方法七、使用web-sockets来跨域"><a href="#方法七、使用web-sockets来跨域" class="header-anchor">#</a> 方法七、使用Web sockets来跨域</h5> <p>web sockets： 是一种浏览器的API，它的目标是在一个单独的持久连接上提供全双工、双向通信。(同源策略对web sockets不适用)</p> <p>web sockets原理：在JS创建了web socket之后，会有一个HTTP请求发送到浏览器以发起连接。取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为web sockt协议。</p> <div class="language- extra-class"><pre><code>    &lt;script&gt;
+    var socket = new WebSockt('ws://www.test.com');
+    //http-&gt;ws; https-&gt;wss
+    socket.send('hello WebSockt');
+    socket.onmessage = function(event){
+        var data = event.data;
+    }
+</code></pre></div><h5 id="方法八、使用flash-urlloader来跨域"><a href="#方法八、使用flash-urlloader来跨域" class="header-anchor">#</a> 方法八、使用flash URLLoader来跨域</h5> <p>flash有自己的一套安全策略，服务器可以通过crossdomain.xml文件来声明能被哪些域的SWF文件访问，SWF也可以通过API来确定自身能被哪些域的SWF加载。
+例如：当跨域访问资源时，例如从域baidu.com请求域google.com上的数据，我们可以借助flash来发送HTTP请求。</p> <p>跨域实现方式：</p> <p>#1. 首先，修改域google.com上的crossdomain.xml(一般存放在根目录，如果没有需要手动创建) ，把baidu.com加入到白名单。
+#2. 其次，通过Flash URLLoader发送HTTP请求
+#3. 最后，通过Flash API把响应结果传递给JavaScript。</p> <p>Flash URLLoader是一种很普遍的跨域解决方案，不过需要支持iOS的话，这个方案就不可行了。</p> <p>以上八种方法，可以根据项目的实际情况来进行选择应用，个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/34.25b5b82b.js" defer></script>
+  </body>
+</html>

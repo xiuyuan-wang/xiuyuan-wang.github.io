@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>sass（scss）、less、postcss、stylus等的用法与区别 | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/19.3a5615bc.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/13.81302ba4.js"><link rel="prefetch" href="/assets/js/14.9afc1667.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/27.9ebc4263.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/31.58ba7ddf.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/34.25b5b82b.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。</p> <h5 id="一-sass-scss、less、stylus是什么"><a href="#一-sass-scss、less、stylus是什么" class="header-anchor">#</a> 一. Sass/Scss、Less、stylus是什么?</h5> <p>它们都是css预处理器。css预处理器的概念：CSS预处理器用一种专门的编程语言，进行Web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。</p> <h5 id="基本介绍"><a href="#基本介绍" class="header-anchor">#</a> 基本介绍:</h5> <h6 id="sass-scss"><a href="#sass-scss" class="header-anchor">#</a> sass/scss</h6> <p>SASS 2007年诞生，最早也是最成熟的CSS预处理器，拥有ruby社区的支持和compass这一最强大的css框架
+Sass的缩排语法，对于写惯css前端的web开发者来说很不直观，sass 不兼容 css 代码
+Sass3 就变成了Scss(sassy css) 与原来的语法兼容，只是用{}取代了原来的缩进
+sass 的运行 依赖于 ruby 环境（compass 将 sass 编译为 css）
+现在可用 node-sass 来编译 sass/scss 文件</p> <div class="language- extra-class"><pre><code>  node-sass 是一套在 node.js 用 LibSass 編 sass/scss 的工具
+  原始的sass 是用 ruby 编写的，所以需要 ruby 环境，libSass 是原始sass引擎的一个 c/c++ 接口，使用它编译sass不依赖于ruby，可以使用其他语言使用libSass
+  node-sass
+  ruby-sass与libsass的区别
+  安装node-sass时，会去GitHub 下载一个 .node的文件而这个文件托管在墙外的服务器上，所以失败了 node-sass安装失败解决方案
+</code></pre></div><p>以 .sass 或 .scss 为文件后缀名称（现在一般都是用 scss）</p> <h6 id="less"><a href="#less" class="header-anchor">#</a> less</h6> <p>less 2009年出现，受sass的影响较大，但又使用CSS的语法，让大部分开发者和设计师更容易上手，在ruby社区之外支持者远超过SASS，其缺点是比起SASS来，可编程功能不够，不过优点是简单和兼容CSS，反过来也影响了sass演变到了scss的时代，著名的Twitter Bootstrap就是采用LESS做底层语言的。
+less 可以使用 less.js 在浏览器运行时中解析 less 代码
+也可以在 node环境中 安装 less，提前编译 less 文件 npm install -g less &amp;lessc styles.less styles.css (可以加参数控制编译后的css排版及压缩)
+以 .less 为文件后缀名称</p> <h6 id="stylus"><a href="#stylus" class="header-anchor">#</a> stylus</h6> <p>Stylus，2010年产生，来自Node.js社区，主要用来给Node项目进行CSS预处理支持，由 TJ 大神开发安装及编译 npm install stylus -g &amp; stylus src/ (可以加参数控制编译后的css排版及压缩)以 .styl 为文件后缀
+使用现状：现在一般都是配合webpack使用这几种预处理语言，需要先安装 编译器、对应 loader，然后再 module.rules 配置其具体规则</p> <h6 id="基本语法"><a href="#基本语法" class="header-anchor">#</a> 基本语法</h6> <p>less 基本语法属于 css 风格，而 sass，stylus 利用缩进，空格，换行来减少需要输入的 字符
+目前 scss, stylus 也可以支持 css 风格，用大括号 来书写</p> <p>1、变量符 @ $ 无变量符号直接变量名</p> <div class="language- extra-class"><pre><code>less 
+@size: 10px;
+.box {
+    width: @size;
+}
+
+scss
+$red: #c00;
+strong {
+    color: $red;
+}
+
+stylus
+red = #c00
+strong
+    color: red
+
+css 的变量规范
+/* global scope */
+:root {
+    --red: #c00;
+}
+strong {
+    color: var(--red);
+}
+
+* 变量作用域：less 惰性加载，sass，stylus 就近加载
+</code></pre></div><p>2、嵌套语法一致，用 &amp; 引用父集 -- 嵌套不建议超过 4 层</p> <div class="language- extra-class"><pre><code>* less 不支持跳出嵌套
+* sass `@at-root`
+```
+@at-root 支持参数，跳出不同的嵌套 
+without： all，表示所有
+without: rule，表示常规css，rule是默认值
+without: media，表示media
+without: support，@support现在使用还不广泛
+
+// child1 将跳出 parent 的嵌套
+.parent1{
+    color:#f00;
+    @at-root .child1 {
+        width:200px;
+    }
+    }
+}
+```
+</code></pre></div><p>3、插值</p> <div class="language- extra-class"><pre><code>less
+@prefix: ui;
+.@{prefix}-button {
+color: #333;
+}
+
+sass
+$prefix: ui
+.#{$prefix}-button {
+    color: #333;
+}
+
+stylus
+prefix = ui
+.{prefix}-button
+    color #333
+</code></pre></div><p>4、混入（mixin）：预处理器最精髓的功能，样式层面上的抽象（相当于copy代码片段）
+less 直接引入
+scss 要先声明 @mixin,使用时 @include</p> <p>5、继承
+6、函数
+7、逻辑控制：sass, stylus 支持 if else for each while, less 使用 mixin when 处理
+具体语法看官方文档</p> <h6 id="总结"><a href="#总结" class="header-anchor">#</a> 总结：</h6> <p>sass 大而全，出现时间最久，但依赖于 ruby (compass)
+less 可以平滑的从 css 过度而来，可以在运行时解析，逻辑功能有些缺失
+stylus 起源 nodejs 社区，语法灵活， 有一个官方开发的样式库 nib，同样提供了不少好用的 mixin</p> <h5 id="postcss-是什么样的一种存在"><a href="#postcss-是什么样的一种存在" class="header-anchor">#</a> Postcss 是什么样的一种存在？</h5> <p>PostCSS 既不是预处理器也不是后处理器，而是一个平台，其本身并不处理任何具体任务，只有当我们为其附加各种插件之后，他才具有实用性
+PostCSS 就像是一个使能器（enabler），他可以不用完全替代现有的预处理器或后处理器，而只是作为他们的补充工具。PostCSS的工作机制主要包含解析代码、执行插件、渲染结果三部分：
+PostCSS 会将css代码解析成包含一系列节点的抽象语法树（AST, Abtract Syntax Tree）。
+PostCSS常用插件 （用这些插件集合其实已经可以代替 三大 css 预处理器）</p> <div class="language- extra-class"><pre><code>cssnext, 未来语法，颜色函数...
+postcss-import, 导入文件
+autoprefixer, 自动前缀
+precss, 集成sass预处理器，功能强大包括 autoprefixer mixins
+postcss-mixins, 混合宏，是用类似sass的混合宏，不可与 precss 混用
+postcss-conditions 逻辑判断
+...
+</code></pre></div><p>目前 Postcss 在一般项目中的用途</p> <p>使用其 autoprefixer 插件，为css 属性增加前缀
+创建 postcss.config.js</p> <div class="language- extra-class"><pre><code>// webpack.config.js
+{
+    test: /\.less$/,
+    loader: ExtractTextWebpackPlugin.extract([
+        {loader: 'css-loader', options: { minimize: true }},
+        'postcss-loader', // 要在预处理器处理完之后，在使用 postcss-loader 
+        'less-loader',
+    ]),
+}
+
+// postcss.config.js
+module.exports = {
+    plugins: [
+        require('autoprefixer')({
+            'browsers': ['&gt; 1%', 'last 2 versions']
+        })
+    ]
+}</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/19.3a5615bc.js" defer></script>
+  </body>
+</html>

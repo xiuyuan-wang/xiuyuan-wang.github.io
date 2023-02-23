@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES6 系列之 defineProperty 与 proxy | 倘若有一天</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/header.jpg">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.a427340b.css" as="style"><link rel="preload" href="/assets/js/app.282508ef.js" as="script"><link rel="preload" href="/assets/js/2.a1cbaef5.js" as="script"><link rel="preload" href="/assets/js/31.58ba7ddf.js" as="script"><link rel="prefetch" href="/assets/js/10.2c98332c.js"><link rel="prefetch" href="/assets/js/100.393ab2a4.js"><link rel="prefetch" href="/assets/js/101.78c1f8b6.js"><link rel="prefetch" href="/assets/js/102.85d15ad3.js"><link rel="prefetch" href="/assets/js/103.b2c501a5.js"><link rel="prefetch" href="/assets/js/104.c0ed595d.js"><link rel="prefetch" href="/assets/js/105.f15f5366.js"><link rel="prefetch" href="/assets/js/106.61151c5e.js"><link rel="prefetch" href="/assets/js/107.d39240eb.js"><link rel="prefetch" href="/assets/js/108.f716bda5.js"><link rel="prefetch" href="/assets/js/109.fbc135d0.js"><link rel="prefetch" href="/assets/js/11.f005400c.js"><link rel="prefetch" href="/assets/js/110.3928667b.js"><link rel="prefetch" href="/assets/js/111.b13a0b48.js"><link rel="prefetch" href="/assets/js/112.7b5006f4.js"><link rel="prefetch" href="/assets/js/113.0d31f132.js"><link rel="prefetch" href="/assets/js/114.2bb5d9e1.js"><link rel="prefetch" href="/assets/js/115.5e64c1e5.js"><link rel="prefetch" href="/assets/js/116.3ee73b77.js"><link rel="prefetch" href="/assets/js/117.f50cff54.js"><link rel="prefetch" href="/assets/js/118.2689f48f.js"><link rel="prefetch" href="/assets/js/119.6426d3f6.js"><link rel="prefetch" href="/assets/js/12.cf3e63d8.js"><link rel="prefetch" href="/assets/js/120.363e12a7.js"><link rel="prefetch" href="/assets/js/121.85ec9cf3.js"><link rel="prefetch" href="/assets/js/13.81302ba4.js"><link rel="prefetch" href="/assets/js/14.9afc1667.js"><link rel="prefetch" href="/assets/js/15.c564a464.js"><link rel="prefetch" href="/assets/js/16.3f8c98ff.js"><link rel="prefetch" href="/assets/js/17.1d432112.js"><link rel="prefetch" href="/assets/js/18.66992dd5.js"><link rel="prefetch" href="/assets/js/19.3a5615bc.js"><link rel="prefetch" href="/assets/js/20.9e0b5237.js"><link rel="prefetch" href="/assets/js/21.f51d933b.js"><link rel="prefetch" href="/assets/js/22.aaa8538e.js"><link rel="prefetch" href="/assets/js/23.e4f94cd3.js"><link rel="prefetch" href="/assets/js/24.5deee84c.js"><link rel="prefetch" href="/assets/js/25.9b363258.js"><link rel="prefetch" href="/assets/js/26.c6083244.js"><link rel="prefetch" href="/assets/js/27.9ebc4263.js"><link rel="prefetch" href="/assets/js/28.d4a74cd6.js"><link rel="prefetch" href="/assets/js/29.bb4db167.js"><link rel="prefetch" href="/assets/js/3.17384045.js"><link rel="prefetch" href="/assets/js/30.3b68b547.js"><link rel="prefetch" href="/assets/js/32.886b3dd0.js"><link rel="prefetch" href="/assets/js/33.5e65a6cc.js"><link rel="prefetch" href="/assets/js/34.25b5b82b.js"><link rel="prefetch" href="/assets/js/35.f8d6f114.js"><link rel="prefetch" href="/assets/js/36.aea7921b.js"><link rel="prefetch" href="/assets/js/37.5c6156f9.js"><link rel="prefetch" href="/assets/js/38.588a6193.js"><link rel="prefetch" href="/assets/js/39.e9ceb0e8.js"><link rel="prefetch" href="/assets/js/4.ac8c0f23.js"><link rel="prefetch" href="/assets/js/40.9acab66e.js"><link rel="prefetch" href="/assets/js/41.97497b1c.js"><link rel="prefetch" href="/assets/js/42.873f16b5.js"><link rel="prefetch" href="/assets/js/43.4d558e3f.js"><link rel="prefetch" href="/assets/js/44.645dab32.js"><link rel="prefetch" href="/assets/js/45.1f2b148b.js"><link rel="prefetch" href="/assets/js/46.f6b30a8a.js"><link rel="prefetch" href="/assets/js/47.6f082f8d.js"><link rel="prefetch" href="/assets/js/48.ce777f64.js"><link rel="prefetch" href="/assets/js/49.570a21ec.js"><link rel="prefetch" href="/assets/js/5.8a91f847.js"><link rel="prefetch" href="/assets/js/50.7d81323a.js"><link rel="prefetch" href="/assets/js/51.0303e90b.js"><link rel="prefetch" href="/assets/js/52.97f8b439.js"><link rel="prefetch" href="/assets/js/53.3fd3c6a9.js"><link rel="prefetch" href="/assets/js/54.d0eb83b3.js"><link rel="prefetch" href="/assets/js/55.32fdcecc.js"><link rel="prefetch" href="/assets/js/56.fbfc09a3.js"><link rel="prefetch" href="/assets/js/57.547120c7.js"><link rel="prefetch" href="/assets/js/58.8ca04f20.js"><link rel="prefetch" href="/assets/js/59.50e6f206.js"><link rel="prefetch" href="/assets/js/6.c966999c.js"><link rel="prefetch" href="/assets/js/60.03d4b566.js"><link rel="prefetch" href="/assets/js/61.03af23bf.js"><link rel="prefetch" href="/assets/js/62.cf5f882a.js"><link rel="prefetch" href="/assets/js/63.8389c2c6.js"><link rel="prefetch" href="/assets/js/64.56a6a39f.js"><link rel="prefetch" href="/assets/js/65.2934948c.js"><link rel="prefetch" href="/assets/js/66.e050480c.js"><link rel="prefetch" href="/assets/js/67.a03accad.js"><link rel="prefetch" href="/assets/js/68.fa9364ed.js"><link rel="prefetch" href="/assets/js/69.2fbeaf39.js"><link rel="prefetch" href="/assets/js/7.971eb831.js"><link rel="prefetch" href="/assets/js/70.89ef1589.js"><link rel="prefetch" href="/assets/js/71.a41e8134.js"><link rel="prefetch" href="/assets/js/72.ba2ffe87.js"><link rel="prefetch" href="/assets/js/73.113b3d76.js"><link rel="prefetch" href="/assets/js/74.4dd54a46.js"><link rel="prefetch" href="/assets/js/75.98bbb07f.js"><link rel="prefetch" href="/assets/js/76.6cee2f65.js"><link rel="prefetch" href="/assets/js/77.0bc53ebb.js"><link rel="prefetch" href="/assets/js/78.8617cec2.js"><link rel="prefetch" href="/assets/js/79.137d3747.js"><link rel="prefetch" href="/assets/js/8.c941beae.js"><link rel="prefetch" href="/assets/js/80.130e6609.js"><link rel="prefetch" href="/assets/js/81.0b3bf721.js"><link rel="prefetch" href="/assets/js/82.982380fc.js"><link rel="prefetch" href="/assets/js/83.501eca82.js"><link rel="prefetch" href="/assets/js/84.66e5994c.js"><link rel="prefetch" href="/assets/js/85.df1ae8de.js"><link rel="prefetch" href="/assets/js/86.565baee7.js"><link rel="prefetch" href="/assets/js/87.3244d4ef.js"><link rel="prefetch" href="/assets/js/88.f104eed0.js"><link rel="prefetch" href="/assets/js/89.592f4c57.js"><link rel="prefetch" href="/assets/js/9.1002202d.js"><link rel="prefetch" href="/assets/js/90.db5ee901.js"><link rel="prefetch" href="/assets/js/91.2acf88e1.js"><link rel="prefetch" href="/assets/js/92.23834236.js"><link rel="prefetch" href="/assets/js/93.33612d70.js"><link rel="prefetch" href="/assets/js/94.3262e5a7.js"><link rel="prefetch" href="/assets/js/95.48027147.js"><link rel="prefetch" href="/assets/js/96.a9ed0cf0.js"><link rel="prefetch" href="/assets/js/97.48930c53.js"><link rel="prefetch" href="/assets/js/98.4a046e5f.js"><link rel="prefetch" href="/assets/js/99.aff15256.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a427340b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/header.jpg" alt="倘若有一天" class="logo"> <span class="site-name can-hide">倘若有一天</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/knows/" class="nav-link">
+  前端
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  数据可视化
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>ES6 系列之 defineProperty 与 proxy
+</p> <h5 id="definepropety"><a href="#definepropety" class="header-anchor">#</a> definePropety</h5> <p>ES5 提供了 Object.defineProperty 方法，该方法可以在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回这个对象。</p> <p>语法
+Object.defineProperty(obj, prop, descriptor)</p> <div class="language- extra-class"><pre><code>obj: 要在其上定义属性的对象。
+
+prop:  要定义或修改的属性的名称。
+
+descriptor: 将被定义或修改的属性的描述符。
+</code></pre></div><p>举个例子：</p> <div class="language- extra-class"><pre><code>var obj = {};
+Object.defineProperty(obj, &quot;num&quot;, {
+    value : 1,
+    writable : true,
+    enumerable : true,
+    configurable : true
+});
+//  对象 obj 拥有属性 num，值为 1
+</code></pre></div><p>虽然我们可以直接添加属性和值，但是使用这种方式，我们能进行更多的配置。</p> <p>函数的第三个参数 descriptor 所表示的属性描述符有两种形式：数据描述符和存取描述符。</p> <h6 id="两者均具有以下两种键值"><a href="#两者均具有以下两种键值" class="header-anchor">#</a> 两者均具有以下两种键值：</h6> <p>configurable</p> <p>当且仅当该属性的 configurable 为 true 时，该属性描述符才能够被改变，也能够被删除。默认为 false。
+enumerable</p> <p>当且仅当该属性的 enumerable 为 true 时，该属性才能够出现在对象的枚举属性中。默认为 false。</p> <h6 id="数据描述符同时具有以下可选键值"><a href="#数据描述符同时具有以下可选键值" class="header-anchor">#</a> 数据描述符同时具有以下可选键值：</h6> <p>value</p> <p>该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined。
+writable</p> <p>当且仅当该属性的 writable 为 true 时，该属性才能被赋值运算符改变。默认为 false。</p> <h6 id="存取描述符同时具有以下可选键值"><a href="#存取描述符同时具有以下可选键值" class="header-anchor">#</a> 存取描述符同时具有以下可选键值：</h6> <p>get</p> <p>一个给属性提供 getter 的方法，如果没有 getter 则为 undefined。该方法返回值被用作属性值。默认为 undefined。
+set</p> <p>一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。该方法将接受唯一参数，并将该参数的新值分配给该属性。默认为 undefined。
+值得注意的是：</p> <p>属性描述符必须是数据描述符或者存取描述符两种形式之一，不能同时是两者 。这就意味着你可以：</p> <div class="language- extra-class"><pre><code>Object.defineProperty({}, &quot;num&quot;, {
+    value: 1,
+    writable: true,
+    enumerable: true,
+    configurable: true
+});
+</code></pre></div><p>也可以：</p> <div class="language- extra-class"><pre><code>var value = 1;
+Object.defineProperty({}, &quot;num&quot;, {
+    get : function(){
+      return value;
+    },
+    set : function(newValue){
+      value = newValue;
+    },
+    enumerable : true,
+    configurable : true
+});
+</code></pre></div><p>但是不可以：</p> <div class="language- extra-class"><pre><code>// 报错
+Object.defineProperty({}, &quot;num&quot;, {
+    value: 1,
+    get: function() {
+        return 1;
+    }
+});
+</code></pre></div><p>此外，所有的属性描述符都是非必须的，但是 descriptor 这个字段是必须的，如果不进行任何配置，你可以这样：</p> <div class="language- extra-class"><pre><code>var obj = Object.defineProperty({}, &quot;num&quot;, {});
+console.log(obj.num); // undefined
+</code></pre></div><h5 id="setters-和-getters"><a href="#setters-和-getters" class="header-anchor">#</a> Setters 和 Getters</h5> <p>之所以讲到 defineProperty，是因为我们要使用存取描述符中的 get 和 set，这两个方法又被称为 getter 和 setter。由 getter 和 setter 定义的属性称做”存取器属性“。</p> <p>当程序查询存取器属性的值时，JavaScript 调用 getter方法。这个方法的返回值就是属性存取表达式的值。当程序设置一个存取器属性的值时，JavaScript 调用 setter 方法，将赋值表达式右侧的值当做参数传入 setter。从某种意义上讲，这个方法负责“设置”属性值。可以忽略 setter 方法的返回值。</p> <p>举个例子：</p> <div class="language- extra-class"><pre><code>var obj = {}, value = null;
+Object.defineProperty(obj, &quot;num&quot;, {
+    get: function(){
+        console.log('执行了 get 操作')
+        return value;
+    },
+    set: function(newValue) {
+        console.log('执行了 set 操作')
+        value = newValue;
+    }
+})
+
+obj.num = 1 // 执行了 set 操作
+
+console.log(obj.num); // 执行了 get 操作 // 1
+</code></pre></div><p>这不就是我们要的监控数据改变的方法吗？我们再来封装一下：</p> <div class="language- extra-class"><pre><code>function Archiver() {
+    var value = null;
+    // archive n. 档案
+    var archive = [];
+
+    Object.defineProperty(this, 'num', {
+        get: function() {
+            console.log('执行了 get 操作')
+            return value;
+        },
+        set: function(value) {
+            console.log('执行了 set 操作')
+            value = value;
+            archive.push({ val: value });
+        }
+    });
+
+    this.getArchive = function() { return archive; };
+}
+
+var arc = new Archiver();
+arc.num; // 执行了 get 操作
+arc.num = 11; // 执行了 set 操作
+arc.num = 13; // 执行了 set 操作
+console.log(arc.getArchive()); // [{ val: 11 }, { val: 13 }]
+</code></pre></div><p>watch API</p> <p>既然可以监控数据的改变，那我可以这样设想，即当数据改变的时候，自动进行渲染工作。举个例子：</p> <p>HTML 中有个 span 标签和 button 标签</p> <div class="language- extra-class"><pre><code>&lt;span id=&quot;container&quot;&gt;1&lt;/span&gt;
+&lt;button id=&quot;button&quot;&gt;点击加 1&lt;/button&gt;
+</code></pre></div><p>当点击按钮的时候，span 标签里的值加 1。</p> <p>传统的做法是：</p> <div class="language- extra-class"><pre><code>document.getElementById('button').addEventListener(&quot;click&quot;, function(){
+    var container = document.getElementById(&quot;container&quot;);
+    container.innerHTML = Number(container.innerHTML) + 1;
+});
+</code></pre></div><p>如果使用了 defineProperty：</p> <div class="language- extra-class"><pre><code>var obj = {
+    value: 1
+}
+
+// 储存 obj.value 的值
+var value = 1;
+
+Object.defineProperty(obj, &quot;value&quot;, {
+    get: function() {
+        return value;
+    },
+    set: function(newValue) {
+        value = newValue;
+        document.getElementById('container').innerHTML = newValue;
+    }
+});
+
+document.getElementById('button').addEventListener(&quot;click&quot;, function() {
+    obj.value += 1;
+});
+</code></pre></div><p>代码看似增多了，但是当我们需要改变 span 标签里的值的时候，直接修改 obj.value 的值就可以了。</p> <p>然而，现在的写法，我们还需要单独声明一个变量存储 obj.value 的值，因为如果你在 set 中直接 obj.value = newValue 就会陷入无限的循环中。此外，我们可能需要监控很多属性值的改变，要是一个一个写，也很累呐，所以我们简单写个 watch 函数。使用效果如下：</p> <div class="language- extra-class"><pre><code>var obj = {
+    value: 1
+}
+
+watch(obj, &quot;value&quot;, function(newvalue){
+    document.getElementById('container').innerHTML = newvalue;
+})
+
+document.getElementById('button').addEventListener(&quot;click&quot;, function(){
+    obj.value += 1
+});
+</code></pre></div><p>我们来写下这个 watch 函数：</p> <div class="language- extra-class"><pre><code>(function(){
+    var root = this;
+    function watch(obj, name, func){
+        var value = obj[name];
+
+        Object.defineProperty(obj, name, {
+            get: function() {
+                return value;
+            },
+            set: function(newValue) {
+                value = newValue;
+                func(value)
+            }
+        });
+
+        if (value) obj[name] = value
+    }
+
+    this.watch = watch;
+})()
+</code></pre></div><p>现在我们已经可以监控对象属性值的改变，并且可以根据属性值的改变，添加回调函数，棒棒哒~</p> <h5 id="proxy"><a href="#proxy" class="header-anchor">#</a> proxy</h5> <p>使用 defineProperty 只能重定义属性的读取（get）和设置（set）行为，到了 ES6，提供了 Proxy，可以重定义更多的行为，比如 in、delete、函数调用等更多行为。</p> <p>Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。我们来看看它的语法：</p> <p>var proxy = new Proxy(target, handler);</p> <p>proxy 对象的所有用法，都是上面这种形式，不同的只是handler参数的写法。其中，new Proxy()表示生成一个Proxy实例，target参数表示所要拦截的目标对象，handler参数也是一个对象，用来定制拦截行为。</p> <div class="language- extra-class"><pre><code>var proxy = new Proxy({}, {
+    get: function(obj, prop) {
+        console.log('设置 get 操作')
+        return obj[prop];
+    },
+    set: function(obj, prop, value) {
+        console.log('设置 set 操作')
+        obj[prop] = value;
+    }
+});
+
+proxy.time = 35; // 设置 set 操作
+
+console.log(proxy.time); // 设置 get 操作 // 35
+</code></pre></div><p>除了 get 和 set 之外，proxy 可以拦截多达 13 种操作，比如 has(target, propKey)，可以拦截 propKey in proxy 的操作，返回一个布尔值。</p> <div class="language- extra-class"><pre><code>// 使用 has 方法隐藏某些属性，不被 in 运算符发现
+var handler = {
+  has (target, key) {
+    if (key[0] === '_') {
+      return false;
+    }
+    return key in target;
+  }
+};
+var target = { _prop: 'foo', prop: 'foo' };
+var proxy = new Proxy(target, handler);
+console.log('_prop' in proxy); // false
+</code></pre></div><p>又比如说 apply 方法拦截函数的调用、call 和 apply 操作。</p> <p>apply 方法可以接受三个参数，分别是目标对象、目标对象的上下文对象（this）和目标对象的参数数组，不过这里我们简单演示一下：</p> <div class="language- extra-class"><pre><code>var target = function () { return 'I am the target'; };
+var handler = {
+  apply: function () {
+    return 'I am the proxy';
+  }
+};
+
+var p = new Proxy(target, handler);
+
+p();
+// &quot;I am the proxy&quot;
+</code></pre></div><p>又比如说 ownKeys 方法可以拦截对象自身属性的读取操作。具体来说，拦截以下操作：</p> <div class="language- extra-class"><pre><code>Object.getOwnPropertyNames()
+Object.getOwnPropertySymbols()
+Object.keys()
+</code></pre></div><p>下面的例子是拦截第一个字符为下划线的属性名，不让它被 for of 遍历到。</p> <div class="language- extra-class"><pre><code>let target = {
+  _bar: 'foo',
+  _prop: 'bar',
+  prop: 'baz'
+};
+
+let handler = {
+  ownKeys (target) {
+    return Reflect.ownKeys(target).filter(key =&gt; key[0] !== '_');
+  }
+};
+
+let proxy = new Proxy(target, handler);
+for (let key of Object.keys(proxy)) {
+  console.log(target[key]);
+}
+// &quot;baz&quot;
+</code></pre></div><p>更多的拦截行为可以查看阮一峰老师的 《ECMAScript 6 入门》</p> <p>值得注意的是，proxy 的最大问题在于浏览器支持度不够，而且很多效果无法使用 poilyfill 来弥补。</p> <h5 id="watch-api-优化"><a href="#watch-api-优化" class="header-anchor">#</a> watch API 优化</h5> <p>我们使用 proxy 再来写一下 watch 函数。使用效果如下：</p> <div class="language- extra-class"><pre><code>(function() {
+    var root = this;
+
+    function watch(target, func) {
+
+        var proxy = new Proxy(target, {
+            get: function(target, prop) {
+                return target[prop];
+            },
+            set: function(target, prop, value) {
+                target[prop] = value;
+                func(prop, value);
+            }
+        });
+
+        return proxy;
+    }
+
+    this.watch = watch;
+})()
+
+var obj = {
+    value: 1
+}
+
+var newObj = watch(obj, function(key, newvalue) {
+    if (key == 'value') document.getElementById('container').innerHTML = newvalue;
+})
+
+document.getElementById('button').addEventListener(&quot;click&quot;, function() {
+    newObj.value += 1
+});
+</code></pre></div><p>我们也可以发现，使用 defineProperty 和 proxy 的区别，当使用 defineProperty，我们修改原来的 obj 对象就可以触发拦截，而使用 proxy，就必须修改代理对象，即 Proxy 的实例才可以触发拦截。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/16/2020, 2:43:08 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.282508ef.js" defer></script><script src="/assets/js/2.a1cbaef5.js" defer></script><script src="/assets/js/31.58ba7ddf.js" defer></script>
+  </body>
+</html>
